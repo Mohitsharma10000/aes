@@ -1,0 +1,86 @@
+/**
+ * Herb air — quiet botanical accent layer
+ * Only active when <html data-theme="herb-air">
+ * Does not change charcoal primary CTAs; sage is jewelry.
+ */
+
+html[data-theme="herb-air"] .eyebrow,
+html[data-theme="herb-air"] .apdp-kicker,
+html[data-theme="herb-air"] .apdp-partners__eyebrow,
+html[data-theme="herb-air"] .prod-hero__eyebrow,
+html[data-theme="herb-air"] .set-card__eyebrow {
+  color: var(--color-sage);
+}
+
+html[data-theme="herb-air"] .badge-off {
+  color: var(--color-sage);
+  border-color: color-mix(in srgb, var(--color-sage) 35%, var(--color-clay));
+  background: color-mix(in srgb, var(--color-sage) 8%, var(--color-warm-white));
+}
+
+html[data-theme="herb-air"] .utility-bar {
+  background: color-mix(in srgb, var(--color-sage) 18%, var(--color-charcoal));
+}
+
+html[data-theme="herb-air"] .site-footer {
+  background: var(--color-plaster);
+}
+
+html[data-theme="herb-air"] .nav-main a:hover,
+html[data-theme="herb-air"] .header-meta a:hover,
+html[data-theme="herb-air"] .curated__more:hover,
+html[data-theme="herb-air"] .apdp-set-link:hover,
+html[data-theme="herb-air"] a.breadcrumb:hover {
+  color: var(--color-sage);
+}
+
+html[data-theme="herb-air"] .apdp-tab.is-active {
+  border-bottom-color: var(--color-sage);
+  color: var(--color-charcoal);
+}
+
+html[data-theme="herb-air"] .apdp-checks li::before {
+  color: var(--color-sage);
+}
+
+html[data-theme="herb-air"] .cart-set-progress__fill {
+  background: var(--color-sage);
+}
+
+html[data-theme="herb-air"] .cart-savings {
+  color: var(--color-sage);
+}
+
+html[data-theme="herb-air"] .prod-section--warm,
+html[data-theme="herb-air"] .apdp-partners--inline {
+  /* soft herb mist only where plaster already sits */
+}
+
+html[data-theme="herb-air"] .prod-section--warm {
+  background: var(--color-sage-mist);
+}
+
+html[data-theme="herb-air"] .filter-chip.is-active,
+html[data-theme="herb-air"] .filters [data-filter].is-active {
+  background: color-mix(in srgb, var(--color-sage) 14%, var(--color-warm-white));
+  border-color: color-mix(in srgb, var(--color-sage) 40%, var(--color-clay));
+  color: var(--color-charcoal);
+}
+
+/* Primary buttons stay charcoal — secondary outline can whisper sage */
+html[data-theme="herb-air"] .btn--secondary {
+  border-color: color-mix(in srgb, var(--color-sage) 45%, var(--color-clay));
+  color: var(--color-charcoal);
+}
+
+html[data-theme="herb-air"] .btn--secondary:hover {
+  border-color: var(--color-sage);
+  background: var(--color-sage-mist);
+}
+
+html[data-theme="herb-air"] .apdp-partner-row__atc:hover,
+html[data-theme="herb-air"] .apdp-partners__set-btn:hover {
+  background: var(--color-sage);
+  border-color: var(--color-sage);
+  color: #fff;
+}

@@ -1,0 +1,235 @@
+/* Aeva Atelier — final visual layer
+   A quiet, tactile commerce system built around paper, glass and ritual. */
+
+:root {
+  --aeva-bg: #ede9dd;
+  --aeva-surface: #f8f6ef;
+  --aeva-chrome: #f3f0e6;
+  --aeva-text: #243027;
+  --aeva-muted: #667067;
+  --aeva-border: #d3cdbd;
+  --aeva-cta: #26372c;
+  --aeva-cta-hover: #17261e;
+  --aeva-cta-type: #fcfbf6;
+  --aeva-accent: #a67948;
+  --gutter: clamp(20px, 4vw, 64px);
+  --section-y: clamp(72px, 9vw, 144px);
+  --max-width: 1440px;
+  --radius: 0;
+  --radius-media: 0;
+}
+
+body {
+  font-size: 16px;
+  letter-spacing: 0.012em;
+  background: var(--aeva-bg);
+}
+
+h1, h2, h3, h4 {
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+::selection { background: #b9c6aa; color: #17261e; }
+
+/* Make the header feel like a considered publishing masthead. */
+html body .site-header .site-header__inner,
+html body .site-header .site-header__inner--top { min-height: 60px; }
+html body .site-header .logo { font-size: clamp(1.65rem, 2.2vw, 2rem) !important; }
+html body .site-header__sub,
+html body .nav-cats { min-height: 42px; }
+html body .nav-cats { gap: 8px clamp(16px, 2vw, 30px); }
+html body .nav-cats a,
+html body .nav-util a,
+html body .header-cart { font-size: 13px !important; }
+html body .nav-cats a { position: relative; }
+html body .nav-cats a::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  left: 0;
+  right: 0;
+  bottom: 7px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 280ms cubic-bezier(.22,1,.36,1);
+}
+html body .nav-cats a:hover::after,
+html body .nav-cats a.is-active::after { transform: scaleX(1); transform-origin: left; }
+html body .header-search-box { border-color: transparent !important; }
+html body .header-search-box:focus-within { border-color: var(--aeva-text) !important; }
+
+/* Buttons are compact, intentional and never pill-shaped. */
+.btn, .product-card__atc, .home-feature__ghost, .pouch-card .btn {
+  min-height: 46px;
+  border-radius: 0 !important;
+  letter-spacing: .09em;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 220ms ease, background-color 220ms ease, border-color 220ms ease, transform 220ms ease;
+}
+.btn:hover, .product-card__atc:hover, .home-feature__ghost:hover { transform: translateY(-2px); text-decoration: none; }
+.product-card__atc--coming {
+  background: transparent;
+  color: var(--aeva-text);
+  border: 1px solid var(--aeva-text);
+}
+.product-card__atc--coming:hover { background: var(--aeva-text); color: var(--aeva-surface); }
+
+/* Full bleed visual moments, with restrained editorial type. */
+.home-stage, .room-hero { min-height: min(860px, calc(100svh - 40px)); }
+.home-stage__media::after, .room-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(18,25,19,.1) 0%, transparent 38%, rgba(18,25,19,.42) 100%);
+}
+.home-stage__copy, .room-hero__copy { z-index: 3; }
+.home-stage__copy { padding-bottom: clamp(48px, 7vh, 96px); }
+.home-stage__copy h1 {
+  font-size: clamp(3rem, 6.2vw, 5.5rem) !important;
+  line-height: .96;
+  max-width: 11ch;
+  letter-spacing: -.055em;
+}
+.home-stage__copy .home-stage__kicker,
+.room-hero__kicker,
+.bb-kicker {
+  color: inherit;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .17em;
+}
+.home-stage__lede { font-size: 1rem !important; max-width: 31ch; }
+.room-hero h1 { font-size: clamp(3.1rem, 6vw, 5.25rem); }
+.room-hero__copy { max-width: 35rem; }
+.room-hero__lede { font-size: 1rem; line-height: 1.65; }
+
+/* A gallery-like browse section gives imagery room to breathe. */
+.home-browse { padding-top: clamp(54px, 7vw, 96px); padding-bottom: clamp(64px, 8vw, 118px); }
+.home-browse__head { margin-bottom: 24px; }
+.home-browse__head h2 { font-size: clamp(1.55rem, 2.5vw, 2.25rem); }
+.home-browse__track { gap: 12px; }
+.home-browse__tile { flex-basis: calc((100% - 60px) / 6); overflow: hidden; }
+.home-browse__tile img { aspect-ratio: 4 / 5; margin-bottom: 13px; transition: transform 600ms cubic-bezier(.22,1,.36,1), filter 600ms ease; }
+.home-browse__tile:hover img { transform: scale(1.045); filter: saturate(.88) contrast(1.03); }
+.home-browse__tile span { display: flex; justify-content: space-between; font-size: 13px; }
+.home-browse__tile span::after { content: "↗"; opacity: 0; transform: translate(-4px, 4px); transition: .25s ease; }
+.home-browse__tile:hover span::after { opacity: 1; transform: translate(0); }
+
+/* Product cards become packaging studies, not generic ecommerce boxes. */
+.product-grid--shop, .shop-chapter .product-grid--shop { gap: clamp(30px, 3.1vw, 54px) clamp(14px, 1.8vw, 28px); }
+.product-card {
+  background: transparent;
+  border: 0;
+  overflow: visible;
+}
+.product-card__media {
+  background: #e5e0d3 !important;
+  border: 0;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(53, 58, 45, .05);
+}
+.product-card__media::after { height: 3px; }
+.product-card__media img {
+  padding: 7% !important;
+  transition: transform 700ms cubic-bezier(.22,1,.36,1), filter 500ms ease !important;
+}
+.product-card:hover .product-card__media img { transform: scale(1.055); filter: saturate(.92); }
+.product-card__body { padding: 15px 0 0; gap: 7px; }
+.product-card__eyebrow { font-size: 10px; letter-spacing: .15em; color: var(--aeva-muted); }
+.product-card__name { font-family: var(--font-serif); font-size: clamp(1.2rem, 1.6vw, 1.5rem); font-weight: 400; letter-spacing: -.035em; }
+.product-card__short { min-height: 42px; color: var(--aeva-muted); font-size: 13px; line-height: 1.45; }
+.product-card__price { display: none; }
+.product-card__atc { width: 100%; margin-top: 10px; }
+
+/* Shop layout gets clear chapters and a sticky filter rail. */
+.shop-hero__media { min-height: clamp(410px, 53vw, 640px); }
+.shop-hero__copy { padding: clamp(34px, 5vw, 78px) var(--gutter) !important; }
+.shop-hero__copy h1 { font-size: clamp(3.3rem, 6vw, 6rem); line-height: .94; letter-spacing: -.06em; }
+.shop-mast__lede { font-size: 1.05rem !important; max-width: 28ch; }
+.shop-toolbar { padding-block: 16px; background: rgba(243,240,230,.94) !important; backdrop-filter: blur(12px); }
+.shop-results { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+.shop-select select { font-size: 13px; }
+.shop-page { padding-top: clamp(58px, 8vw, 104px); }
+.shop-chapter { margin-bottom: clamp(86px, 12vw, 160px); }
+.shop-chapter h2 { font-size: clamp(2.5rem, 5vw, 4.4rem); letter-spacing: -.055em; margin-bottom: 14px; }
+.shop-chapter__lede { font-size: 1rem; margin-bottom: 36px; }
+
+/* Room pages behave as a guided purchasing story. */
+.room-tale { padding-top: 0; }
+.room-tale__title { padding-top: clamp(72px, 10vw, 148px); padding-bottom: clamp(38px, 5vw, 70px); font-size: clamp(2.4rem, 4.5vw, 4rem); }
+.room-tale__col { padding: clamp(50px, 6vw, 88px) clamp(24px, 7vw, 112px); }
+.room-tale__col h3 { font-size: clamp(1.8rem, 2.8vw, 2.5rem); }
+.room-tale__col > p { min-height: 46px; font-size: 14px; }
+.room-tale__pack { width: min(310px, 76%); margin-top: 40px; }
+.room-complement { padding: clamp(78px, 10vw, 140px) 0; background: #d8d4c4; }
+.room-complement__inner h2, .room-pouches > h2 { font-size: clamp(2.4rem, 4vw, 3.65rem); letter-spacing: -.05em; }
+.room-complement__row { margin-top: 46px; }
+.room-complement__media img { aspect-ratio: 5/4; }
+.room-pouches { padding-top: clamp(80px, 10vw, 150px); padding-bottom: clamp(80px, 10vw, 150px); }
+.pouch-card { background: var(--aeva-surface); padding: clamp(32px, 5vw, 68px); }
+.pouch-card__media { width: min(230px, 72%); }
+.also-like--range { padding-top: clamp(70px, 9vw, 128px); padding-bottom: clamp(62px, 8vw, 110px); }
+
+/* Home sections: alternate paper, image, and charcoal at a deliberate tempo. */
+.home-feature { min-height: min(820px, 92svh); }
+.home-feature__media { min-height: min(820px, 92svh); }
+.home-feature__overlay { padding: clamp(30px, 4vw, 68px); }
+.home-feature__overlay h2 { font-size: clamp(2.6rem, 4.5vw, 4.5rem); line-height: .98; letter-spacing: -.055em; max-width: 10ch; }
+.home-feature__buy { padding: clamp(44px, 6vw, 92px); }
+.home-feature__buy h3 { font-size: clamp(2.2rem, 3.4vw, 3.4rem); }
+.home-feature__pack { width: min(390px, 82%); }
+.bb-section { padding-top: clamp(78px, 9vw, 138px); padding-bottom: clamp(78px, 9vw, 138px); }
+.bb-section > h2, .bb-kicker + h2, .reviews-head h2, .system-stage__copy h2 { font-size: clamp(2.7rem, 5.7vw, 5.25rem); line-height: .96; letter-spacing: -.06em; max-width: 12ch; }
+.bb-lede { font-size: clamp(1rem, 1.4vw, 1.22rem); line-height: 1.6; }
+.bb-steps { gap: clamp(24px, 4vw, 64px); }
+.bb-steps h3 { font-size: clamp(1.55rem, 2vw, 2.1rem); }
+.six-strip { margin-top: 54px; }
+.founder-block__face { background: url("../assets/home/nature-leaves.jpg") center/cover; opacity: 1; }
+.founder-block h2 { font-size: clamp(2.7rem, 4vw, 4rem); letter-spacing: -.055em; }
+.home-reading__tile { overflow: hidden; }
+.home-reading__tile img { transition: transform .7s cubic-bezier(.22,1,.36,1); }
+.home-reading__tile:hover img { transform: scale(1.045); }
+
+/* Motion is intentionally tactile: no content is hidden while it waits to animate. */
+@media (prefers-reduced-motion: no-preference) {
+  .room-tale__pack img, .pouch-card__media img, .home-feature__pack img {
+    transition: transform 650ms cubic-bezier(.22,1,.36,1), filter 500ms ease;
+  }
+  .room-tale__col:hover .room-tale__pack img,
+  .pouch-card:hover .pouch-card__media img,
+  .home-feature__buy:hover .home-feature__pack img {
+    transform: translateY(-7px) scale(1.025);
+    filter: drop-shadow(0 18px 18px rgba(31,43,33,.14));
+  }
+}
+
+@media (max-width: 767px) {
+  .home-stage, .room-hero { min-height: min(720px, calc(100svh - 40px)); }
+  .home-stage__copy { padding: 0 24px 54px; }
+  .home-stage__copy h1 { font-size: clamp(3rem, 14vw, 4.25rem) !important; }
+  .room-hero__copy { padding: 18vh 24px 10vh; }
+  .home-browse__tile { flex-basis: 58vw; min-width: 58vw; }
+  .home-browse__tile img { aspect-ratio: 4/5; }
+  .shop-toolbar { position: static; align-items: flex-start; }
+  .shop-toolbar__filters { width: 100%; justify-content: space-between; }
+  .product-grid--shop, .shop-chapter .product-grid--shop { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 38px 14px; }
+  .product-card__name { font-size: 1.18rem; }
+  .product-card__short { min-height: 54px; font-size: 12px; }
+  .product-card__atc { min-height: 41px; font-size: 10px; letter-spacing: .06em; }
+  .room-tale__grid, .room-complement__row, .room-complement__products { grid-template-columns: 1fr; }
+  .room-tale__col { padding: 56px 24px; }
+  .room-complement__row { gap: 48px; }
+  .home-feature { display: block; min-height: auto; }
+  .home-feature__media { min-height: 72svh; }
+  .home-feature__buy { min-height: auto; }
+  .bb-section > h2, .bb-kicker + h2, .reviews-head h2, .system-stage__copy h2 { max-width: 11ch; }
+  .founder-block { grid-template-columns: 1fr; gap: 28px; }
+}

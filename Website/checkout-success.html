@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Order confirmed — Aeva Essentials</title>
+    <meta name="robots" content="noindex" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/tokens.css?v=chrome-9" />
+    <script src="assets/theme.js?v=spec-1"></script>
+    <link rel="stylesheet" href="styles/theme-herb-air.css?v=olive-1" />
+    <link rel="stylesheet" href="styles/theme-olive-amber.css?v=olive-2" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/radius.css?v=round-2" />
+    <link rel="stylesheet" href="styles/components.css?v=chrome-1" />
+    <link rel="stylesheet" href="styles/production.css?v=width-1" />
+    <link rel="stylesheet" href="styles/pages.css" />
+      <link rel="stylesheet" href="styles/spec.css?v=chrome-14" />
+    <link rel="stylesheet" href="styles/branch.css?v=home-f" />
+    <link rel="stylesheet" href="styles/paper-chrome.css?v=paper-22" />
+  </head>
+  <body data-aeva-chrome="">
+    <div id="site-header-mount"></div>
+
+    <main class="checkout-success">
+      <p class="eyebrow text-success">Mock order placed</p>
+      <h1>Thank you.</h1>
+      <p class="muted" style="margin: 16px auto 20px; max-width: 36ch">
+        This is an illustrative confirmation. No payment was taken and nothing will ship.
+      </p>
+      <ul class="page-trust" style="justify-content: center; margin-bottom: 28px">
+        <li>Quiet packing</li>
+        <li>Packed with care</li>
+        <li>Demo only</li>
+      </ul>
+      <p style="font-size: 14px; margin-bottom: 8px">Order reference</p>
+      <p style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 32px" data-order-id>—</p>
+      <div class="btn-row" style="justify-content: center">
+        <a class="btn btn--primary" href="shop.html">Continue shopping</a>
+        <a class="btn btn--secondary" href="home.html">Home</a>
+      </div>
+      <p class="disclaimer" style="margin-top: 40px">Stored locally as <code>aeva.kitchen.orders.v1</code> for demo inspection only.</p>
+    </main>
+
+    <div id="site-footer-mount"></div>
+    <div id="cart-mount"></div>
+
+    <script src="data/catalog.js?v=ia-6"></script>
+    <script src="assets/cart.js?v=ia-1"></script>
+    <script src="assets/partials.js?v=ia-13"></script>
+    <script src="assets/search.js?v=spec-3"></script>
+    <script src="assets/app.js"></script>
+    <script>
+      (function () {
+        const id = new URLSearchParams(location.search).get("order") || "—";
+        const el = document.querySelector("[data-order-id]");
+        if (el) el.textContent = id;
+      })();
+    </script>
+  </body>
+</html>

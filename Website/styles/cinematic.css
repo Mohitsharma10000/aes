@@ -1,0 +1,1205 @@
+/* ============================================================
+   Aeva Essentials — Cinematic Scroll Experience
+   All colors from tokens.css. No new brand colors introduced.
+   ============================================================ */
+
+/* ─── Smooth scroll body ─── */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* ─── Global cinematic reset ─── */
+body[data-aeva-chrome="home"] {
+  overflow-x: hidden;
+}
+
+/* ─── Chapter container ─── */
+.cin-chapter {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ─── Eyebrow / kicker ─── */
+.cin-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--aeva-muted);
+  margin-bottom: 16px;
+}
+
+/* ─── Split-word animation targets ─── */
+.cin-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+.cin-word-inner {
+  display: inline-block;
+  will-change: transform;
+}
+
+/* ============================================================
+   CHAPTER 01 — THE ENTRANCE (Hero)
+   ============================================================ */
+.cin-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  color: var(--aeva-cta-type);
+  z-index: 1;
+}
+
+.cin-hero__video-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.cin-hero__video-wrap video,
+.cin-hero__video-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+  will-change: transform;
+}
+
+.cin-hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(40, 41, 30, 0.25) 0%,
+    rgba(40, 41, 30, 0.05) 35%,
+    rgba(40, 41, 30, 0.10) 55%,
+    rgba(40, 41, 30, 0.65) 100%
+  );
+}
+
+.cin-hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--gutter) clamp(60px, 10vh, 120px);
+  will-change: transform, opacity;
+}
+
+.cin-hero__kicker {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0;
+  margin-bottom: 18px;
+  color: rgba(244, 239, 228, 0.85);
+}
+
+.cin-hero__title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  max-width: 12ch;
+  margin-bottom: 20px;
+  color: var(--aeva-cta-type);
+  overflow: hidden;
+}
+
+.cin-hero__lede {
+  font-size: clamp(0.95rem, 1.3vw, 1.15rem);
+  line-height: 1.6;
+  max-width: 34ch;
+  opacity: 0;
+  margin-bottom: 32px;
+  color: rgba(244, 239, 228, 0.88);
+}
+
+.cin-hero__actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  opacity: 0;
+}
+
+.cin-hero__scroll-cue {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  will-change: opacity;
+}
+
+.cin-hero__scroll-cue span {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(244, 239, 228, 0.6);
+}
+
+.cin-hero__scroll-line {
+  width: 1px;
+  height: 40px;
+  background: rgba(244, 239, 228, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.cin-hero__scroll-line::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(244, 239, 228, 0.8);
+  animation: cin-scroll-pulse 2s ease-in-out infinite;
+}
+
+@keyframes cin-scroll-pulse {
+  0% { top: -100%; }
+  50% { top: 100%; }
+  100% { top: 100%; }
+}
+
+/* ============================================================
+   CHAPTER 02 — THE RANGE (Product Lineup)
+   ============================================================ */
+.cin-range {
+  position: relative;
+  background: var(--aeva-bg);
+  z-index: 2;
+}
+
+.cin-range__pin {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cin-range__stage {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  will-change: transform;
+}
+
+.cin-range__img-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  will-change: transform;
+}
+
+.cin-range__img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  will-change: transform;
+}
+
+/* Subtle ambient glow behind product lineup using accent color */
+.cin-range__glow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 60%;
+  background: radial-gradient(
+    ellipse at center,
+    color-mix(in srgb, var(--aeva-accent) 8%, transparent) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cin-range__copy {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 48px var(--gutter);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  z-index: 3;
+  will-change: transform, opacity;
+}
+
+.cin-range__copy h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 400;
+  color: var(--aeva-text);
+  max-width: 18ch;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.cin-range__copy p {
+  font-size: 15px;
+  color: var(--aeva-muted);
+  max-width: 36ch;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.cin-range__scent-strip {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  will-change: opacity;
+}
+
+.cin-range__scent-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--aeva-text);
+  letter-spacing: 0.02em;
+  opacity: 0;
+}
+
+.cin-range__scent-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   CHAPTER 03 — THE RITUAL (Browse by Room)
+   ============================================================ */
+.cin-ritual {
+  position: relative;
+  background: var(--aeva-bg);
+  z-index: 2;
+}
+
+.cin-ritual__pin {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  overflow: hidden;
+}
+
+.cin-ritual__media {
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.cin-ritual__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: transform;
+}
+
+.cin-ritual__media-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(40, 41, 30, 0.55) 0%,
+    rgba(40, 41, 30, 0.05) 50%,
+    rgba(40, 41, 30, 0.10) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cin-ritual__label {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  z-index: 2;
+  color: var(--aeva-cta-type);
+  will-change: transform, opacity;
+}
+
+.cin-ritual__label h3 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  font-weight: 400;
+  color: var(--aeva-cta-type);
+  margin-bottom: 8px;
+}
+
+.cin-ritual__label a {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(244, 239, 228, 0.85);
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 200ms ease;
+}
+
+.cin-ritual__label a::after {
+  content: '→';
+  transition: transform 200ms ease;
+}
+
+.cin-ritual__label a:hover {
+  color: #fff;
+  text-decoration: none !important;
+}
+.cin-ritual__label a:hover::after {
+  transform: translateX(4px);
+}
+
+.cin-ritual__center-copy {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  text-align: center;
+  will-change: opacity;
+  pointer-events: none;
+}
+
+.cin-ritual__center-copy h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  color: var(--aeva-cta-type);
+  font-weight: 400;
+  text-shadow: 0 2px 20px rgba(40,41,30,0.4);
+  white-space: nowrap;
+}
+
+.cin-ritual__rooms-nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  background: color-mix(in srgb, var(--aeva-bg) 92%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 18px 20px;
+  will-change: transform, opacity;
+}
+
+.cin-ritual__rooms-nav a {
+  padding: 10px 24px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--aeva-text);
+  text-decoration: none !important;
+  border-right: 1px solid var(--aeva-border);
+  transition: color 200ms ease;
+}
+
+.cin-ritual__rooms-nav a:last-child {
+  border-right: none;
+}
+
+.cin-ritual__rooms-nav a:hover {
+  color: var(--aeva-accent);
+  text-decoration: none !important;
+}
+
+/* ============================================================
+   CHAPTER 04 — THE DETAIL (Product Close-up)
+   ============================================================ */
+.cin-detail {
+  position: relative;
+  background: var(--aeva-surface);
+  z-index: 2;
+}
+
+.cin-detail__pin {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cin-detail__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  will-change: opacity;
+}
+
+.cin-detail__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(20px) brightness(1.05);
+}
+
+.cin-detail__product {
+  position: relative;
+  z-index: 1;
+  width: clamp(220px, 28vw, 380px);
+  will-change: transform;
+}
+
+.cin-detail__product img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 24px 48px rgba(40, 41, 30, 0.15));
+}
+
+.cin-detail__info {
+  position: absolute;
+  right: var(--gutter);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  max-width: 380px;
+  will-change: transform, opacity;
+}
+
+.cin-detail__info h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+  font-weight: 400;
+  color: var(--aeva-text);
+  margin-bottom: 8px;
+  line-height: 1.15;
+}
+
+.cin-detail__scent-line {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  margin-bottom: 16px;
+}
+
+.cin-detail__desc {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--aeva-muted);
+  margin-bottom: 24px;
+}
+
+.cin-detail__promises {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cin-detail__promise {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--aeva-accent);
+  padding: 8px 16px;
+  border: 1px solid color-mix(in srgb, var(--aeva-accent) 30%, var(--aeva-border));
+  border-radius: var(--radius-full);
+  opacity: 0;
+}
+
+/* ============================================================
+   CHAPTER 05 — THE SYSTEM (Refill Story)
+   ============================================================ */
+.cin-system {
+  position: relative;
+  background: color-mix(in srgb, var(--aeva-cta) 92%, var(--aeva-text));
+  color: var(--aeva-cta-type);
+  z-index: 2;
+}
+
+.cin-system__pin {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.cin-system__inner {
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.cin-system__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  position: relative;
+}
+
+.cin-system__bottle,
+.cin-system__pouch {
+  width: 42%;
+  will-change: transform;
+}
+
+.cin-system__bottle img,
+.cin-system__pouch img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 16px 40px rgba(0,0,0,0.25));
+}
+
+.cin-system__arrow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--aeva-accent) 20%, transparent);
+  color: var(--aeva-cta-type);
+  font-size: 20px;
+  opacity: 0;
+  will-change: opacity;
+}
+
+.cin-system__copy h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--aeva-cta-type);
+  margin-bottom: 40px;
+}
+
+.cin-system__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.cin-system__step {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.cin-system__step-num {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--aeva-accent);
+  flex-shrink: 0;
+  width: 32px;
+}
+
+.cin-system__step h3 {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--aeva-cta-type);
+  margin-bottom: 4px;
+}
+
+.cin-system__step p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(244, 239, 228, 0.7);
+}
+
+.cin-system__cta-row {
+  margin-top: 36px;
+  opacity: 0;
+}
+
+/* ============================================================
+   CHAPTER 06 — THE COLLECTION (Products, Reviews, Proof)
+   ============================================================ */
+.cin-collection {
+  position: relative;
+  background: var(--aeva-bg);
+  padding: clamp(80px, 12vh, 140px) 0;
+  z-index: 2;
+}
+
+.cin-collection__section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  margin-bottom: clamp(72px, 10vh, 120px);
+  will-change: transform, opacity;
+}
+
+.cin-collection__section:last-child {
+  margin-bottom: 0;
+}
+
+/* Feature kit */
+.cin-feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  min-height: 480px;
+}
+
+.cin-feature__media {
+  position: relative;
+  overflow: hidden;
+}
+
+.cin-feature__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: transform;
+  transition: transform 800ms ease;
+}
+
+.cin-feature:hover .cin-feature__media img {
+  transform: scale(1.04);
+}
+
+.cin-feature__copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(36px, 5vw, 64px);
+  background: var(--aeva-surface);
+}
+
+.cin-feature__copy h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 2.4vw, 2rem);
+  font-weight: 400;
+  color: var(--aeva-text);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.cin-feature__copy p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--aeva-muted);
+  margin-bottom: 24px;
+  max-width: 36ch;
+}
+
+/* Product tabs in collection */
+.cin-tabs-head {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.cin-tabs-head h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  font-weight: 400;
+  color: var(--aeva-text);
+  margin-bottom: 24px;
+}
+
+/* Reviews */
+.cin-reviews {
+  text-align: center;
+  padding: clamp(60px, 8vh, 100px) 0;
+  background: color-mix(in srgb, var(--aeva-muted) 6%, var(--aeva-bg));
+  border-top: 1px solid var(--aeva-border);
+  border-bottom: 1px solid var(--aeva-border);
+  margin-left: calc(-1 * var(--gutter));
+  margin-right: calc(-1 * var(--gutter));
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+/* Proof bar */
+.cin-proof {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  text-align: center;
+  padding: 48px 0;
+}
+
+.cin-proof__item h3 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--aeva-text);
+  margin-bottom: 6px;
+}
+
+.cin-proof__item p {
+  font-size: 14px;
+  color: var(--aeva-muted);
+}
+
+/* ============================================================
+   CHAPTER 07 — THE CLOSE (Final CTA)
+   ============================================================ */
+.cin-close {
+  position: relative;
+  background: var(--aeva-bg);
+  z-index: 2;
+}
+
+.cin-close__pin {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.cin-close__product {
+  width: clamp(600px, 70vw, 1000px);
+  margin-bottom: 48px;
+  will-change: transform;
+}
+
+.cin-close__product img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 20px 50px rgba(40, 41, 30, 0.12));
+}
+
+.cin-close__copy {
+  will-change: transform, opacity;
+}
+
+.cin-close__copy h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  font-weight: 400;
+  color: var(--aeva-text);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.cin-close__copy p {
+  font-size: 16px;
+  color: var(--aeva-muted);
+  margin-bottom: 36px;
+  max-width: 36ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============================================================
+   BUTTONS — Magnetic + Premium
+   ============================================================ */
+.cin-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: transform 300ms ease, box-shadow 300ms ease, background 200ms ease, color 200ms ease;
+  will-change: transform;
+  border: none;
+}
+
+.cin-btn:hover {
+  text-decoration: none !important;
+}
+
+.cin-btn--primary {
+  background: var(--aeva-cta-type);
+  color: var(--aeva-text);
+  box-shadow: 0 4px 20px rgba(40, 41, 30, 0.12);
+}
+
+.cin-btn--primary:hover {
+  box-shadow: 0 8px 32px rgba(40, 41, 30, 0.18);
+  transform: translateY(-2px);
+}
+
+.cin-btn--dark {
+  background: var(--aeva-cta);
+  color: var(--aeva-cta-type);
+  box-shadow: 0 4px 20px rgba(40, 41, 30, 0.2);
+}
+
+.cin-btn--dark:hover {
+  background: var(--aeva-cta-hover);
+  box-shadow: 0 8px 32px rgba(40, 41, 30, 0.3);
+  transform: translateY(-2px);
+}
+
+.cin-btn--ghost {
+  background: transparent;
+  color: var(--aeva-cta-type);
+  border: 1px solid rgba(244, 239, 228, 0.4);
+}
+
+.cin-btn--ghost:hover {
+  border-color: var(--aeva-cta-type);
+  background: rgba(244, 239, 228, 0.08);
+}
+
+.cin-btn--ghost-dark {
+  background: transparent;
+  color: var(--aeva-text);
+  border: 1px solid var(--aeva-border);
+}
+
+.cin-btn--ghost-dark:hover {
+  border-color: var(--aeva-accent);
+  color: var(--aeva-accent);
+}
+
+.cin-btn--ghost-light {
+  background: transparent;
+  color: var(--aeva-cta-type);
+  border: 1px solid rgba(244, 239, 228, 0.4);
+}
+
+.cin-btn--ghost-light:hover {
+  border-color: rgba(244, 239, 228, 0.8);
+}
+
+/* Magnetic effect applied by JS */
+.cin-btn[data-magnetic] {
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 300ms ease, background 200ms ease;
+}
+
+/* ============================================================
+   SCROLL-REVEAL UTILITIES
+   ============================================================ */
+.cin-reveal {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.cin-reveal--up {
+  transform: translateY(40px);
+}
+
+.cin-reveal--left {
+  transform: translateX(-40px);
+}
+
+.cin-reveal--right {
+  transform: translateX(40px);
+}
+
+.cin-reveal--scale {
+  transform: scale(0.92);
+}
+
+.cin-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+  transition: opacity 800ms ease, transform 800ms ease;
+}
+
+/* Stagger delays */
+.cin-stagger-1 { transition-delay: 0.1s; }
+.cin-stagger-2 { transition-delay: 0.2s; }
+.cin-stagger-3 { transition-delay: 0.3s; }
+.cin-stagger-4 { transition-delay: 0.4s; }
+.cin-stagger-5 { transition-delay: 0.5s; }
+
+/* ============================================================
+   PARALLAX DEPTH LAYERS
+   ============================================================ */
+[data-parallax] {
+  will-change: transform;
+}
+
+/* ============================================================
+   TRANSITIONS BETWEEN CHAPTERS
+   ============================================================ */
+.cin-transition {
+  position: relative;
+  height: 20vh;
+  min-height: 100px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cin-transition--down {
+  background: linear-gradient(
+    180deg,
+    var(--aeva-bg) 0%,
+    var(--aeva-surface) 100%
+  );
+}
+
+.cin-transition--up {
+  background: linear-gradient(
+    180deg,
+    var(--aeva-surface) 0%,
+    var(--aeva-bg) 100%
+  );
+}
+
+.cin-transition--dark {
+  background: linear-gradient(
+    180deg,
+    var(--aeva-bg) 0%,
+    color-mix(in srgb, var(--aeva-cta) 92%, var(--aeva-text)) 100%
+  );
+}
+
+.cin-transition--dark-out {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--aeva-cta) 92%, var(--aeva-text)) 0%,
+    var(--aeva-bg) 100%
+  );
+}
+
+/* ============================================================
+   SCENT PARTICLES (Canvas overlay, colored by palette)
+   ============================================================ */
+.cin-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.cin-particles canvas {
+  width: 100%;
+  height: 100%;
+}
+
+/* ============================================================
+   MOBILE OPTIMIZATIONS
+   ============================================================ */
+@media (max-width: 960px) {
+  .cin-ritual__pin {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: auto;
+  }
+
+  .cin-ritual__media {
+    height: 50vh;
+    min-height: 300px;
+  }
+
+  .cin-ritual__center-copy {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    padding: 24px var(--gutter);
+    background: rgba(40, 41, 30, 0.7);
+    backdrop-filter: blur(8px);
+  }
+
+  .cin-ritual__center-copy h2 {
+    white-space: normal;
+    font-size: 1.4rem;
+  }
+
+  .cin-ritual__rooms-nav {
+    position: relative;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  .cin-ritual__rooms-nav a {
+    padding: 10px 16px;
+    font-size: 12px;
+  }
+
+  .cin-detail__pin {
+    flex-direction: column;
+    height: auto;
+    min-height: auto;
+    padding: 60px 0;
+  }
+
+  .cin-detail__product {
+    width: 60%;
+    margin-bottom: 40px;
+  }
+
+  .cin-detail__info {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    max-width: none;
+    padding: 0 var(--gutter);
+    text-align: center;
+  }
+
+  .cin-detail__promises {
+    justify-content: center;
+  }
+
+  .cin-system__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .cin-system__pin {
+    height: auto;
+    min-height: auto;
+    padding: 60px 0;
+  }
+
+  .cin-system__media {
+    gap: 16px;
+  }
+
+  .cin-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .cin-feature__media {
+    height: 300px;
+  }
+
+  .cin-close__product {
+    width: 90%;
+  }
+
+  .cin-close__pin {
+    height: auto;
+    min-height: auto;
+    padding: 80px var(--gutter);
+  }
+
+  .cin-proof {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .cin-hero__title {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+  }
+
+  .cin-range__copy h2 {
+    font-size: 1.5rem;
+  }
+
+  .cin-close__copy h2 {
+    font-size: clamp(1.8rem, 7vw, 2.4rem);
+  }
+
+  .cin-btn {
+    padding: 12px 24px;
+    font-size: 12px;
+  }
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .cin-reveal,
+  .cin-word-inner,
+  [data-parallax],
+  .cin-hero__content,
+  .cin-range__stage,
+  .cin-detail__product,
+  .cin-system__bottle,
+  .cin-system__pouch,
+  .cin-close__product {
+    will-change: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .cin-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .cin-hero__kicker,
+  .cin-hero__lede,
+  .cin-hero__actions,
+  .cin-hero__scroll-cue {
+    opacity: 1 !important;
+  }
+
+  .cin-hero__scroll-line::after {
+    animation: none !important;
+  }
+}
+
+/* ============================================================
+   PIN SPACER FIXES (GSAP adds .pin-spacer wrappers)
+   ============================================================ */
+.pin-spacer {
+  pointer-events: none;
+}
+
+.pin-spacer > * {
+  pointer-events: auto;
+}

@@ -1,0 +1,105 @@
+/* Squircle corners on controls, chips, and media. Cards stay paper-flat. */
+
+:where(
+  .btn,
+  .btn--primary,
+  .btn--secondary,
+  .btn--ghost,
+  .btn--ghost-light,
+  .product-card__atc,
+  .apdp-atc,
+  .apdp-sticky__btn,
+  .apdp-sticky__btn,
+  .cart-set-progress__cta,
+  .curated-card__atc,
+  .system-card__pager button,
+  .header-icon,
+  .nav-toggle,
+  .shop-clear,
+  input[type="text"],
+  input[type="email"],
+  input[type="search"],
+  input[type="number"],
+  input[type="tel"],
+  select,
+  textarea,
+  .header-search-bar,
+  .header-search-bar__input,
+  .shop-select select,
+  .format-chip,
+  .filter-chip,
+  .bb-used li,
+  .product-card__chips button
+) {
+  border-radius: var(--radius-md, 14px) !important;
+  corner-shape: squircle;
+}
+
+:where(.format-chip, .filter-chip, .bb-used li) {
+  border-radius: var(--radius-chip, 10px) !important;
+  corner-shape: squircle;
+}
+
+:where(
+  .product-card__media,
+  .product-card__media img,
+  .six-strip__media,
+  .six-strip__media img,
+  .room-tile__media,
+  .room-tile__media img,
+  .room-tile--lg .room-tile__media,
+  .set-card img,
+  .system-stage__media > img,
+  .system-card,
+  .system-card__thumb,
+  .system-card__thumb img,
+  .bb-include img,
+  .bb-pdp__stage,
+  .bb-pdp__thumbs button,
+  .bb-pdp__thumbs img,
+  .pdp-kit__media,
+  .pdp-kit__media img,
+  .apdp-media img,
+  .founder-block__face
+) {
+  border-radius: var(--radius-media, 16px) !important;
+  corner-shape: squircle;
+}
+
+:where(
+  .product-card__media,
+  .six-strip__media,
+  .room-tile__media,
+  .system-card__thumb,
+  .system-stage__media,
+  .bb-pdp__stage,
+  .bb-pdp__thumbs button,
+  .pdp-kit__media
+) {
+  overflow: hidden;
+}
+
+:where(.reviews-card) {
+  border-radius: var(--radius-lg, 16px) !important;
+  corner-shape: squircle;
+}
+
+:where(.nav-learn, .header-search-results, .cart-drawer, .nav-sheet__panel) {
+  border-radius: var(--radius-lg, 16px) !important;
+  corner-shape: squircle;
+}
+
+.cart-drawer {
+  border-radius: var(--radius-xl, 20px) 0 0 var(--radius-xl, 20px) !important;
+}
+
+.nav-sheet__panel {
+  border-radius: 0 var(--radius-xl, 20px) var(--radius-xl, 20px) 0 !important;
+}
+
+.header-cart .cart-count,
+.system-pin,
+.scent-chip {
+  border-radius: 999px !important;
+  corner-shape: squircle;
+}

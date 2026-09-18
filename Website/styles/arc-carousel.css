@@ -1,0 +1,330 @@
+/* ============================================================
+   Aeva Essentials — Arc Carousel
+   3D curved carousel for product bottles.
+   All colours from tokens.css — no new brand colours.
+   ============================================================ */
+
+/* ─── Container ─── */
+.arc-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--aeva-bg);
+  padding: clamp(60px, 8vh, 100px) 0 clamp(40px, 6vh, 80px);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.arc-carousel__header {
+  text-align: center;
+  max-width: var(--max-width);
+  margin: 0 auto clamp(32px, 5vh, 56px);
+  padding: 0 var(--gutter);
+}
+
+.arc-carousel__kicker {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--aeva-muted);
+  margin-bottom: 14px;
+}
+
+.arc-carousel__header h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+  font-weight: 400;
+  color: var(--aeva-text);
+  line-height: 1.15;
+  margin-bottom: 10px;
+}
+
+.arc-carousel__header p {
+  font-size: 15px;
+  color: var(--aeva-muted);
+  line-height: 1.6;
+}
+
+/* ─── 3D Stage ─── */
+.arc-carousel__stage {
+  position: relative;
+  width: 100%;
+  height: clamp(420px, 55vh, 620px);
+  perspective: 1200px;
+  perspective-origin: 50% 45%;
+  cursor: grab;
+  touch-action: pan-y;
+  overflow: visible;
+}
+
+.arc-carousel__stage:active {
+  cursor: grabbing;
+}
+
+.arc-carousel__track {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* ─── Individual product item ─── */
+.arc-carousel__item {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: clamp(200px, 22vw, 320px);
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+  transition: none; /* JS controls all transitions */
+  pointer-events: none;
+}
+
+.arc-carousel__item.is-center {
+  pointer-events: auto;
+  z-index: 10;
+}
+
+.arc-carousel__item-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none !important;
+  color: inherit;
+}
+
+.arc-carousel__item-inner:hover {
+  text-decoration: none !important;
+}
+
+/* Product image */
+.arc-carousel__img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.arc-carousel__img-wrap img {
+  max-width: 85%;
+  max-height: 92%;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 32px rgba(40, 41, 30, 0.12));
+  transition: filter 400ms ease;
+  pointer-events: none;
+}
+
+.arc-carousel__item.is-center .arc-carousel__img-wrap img {
+  filter: drop-shadow(0 24px 48px rgba(40, 41, 30, 0.18));
+}
+
+/* Product label (below image) */
+.arc-carousel__label {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 400ms ease, transform 400ms ease;
+  pointer-events: none;
+}
+
+.arc-carousel__item.is-center .arc-carousel__label {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.arc-carousel__name {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  font-weight: 500;
+  color: var(--aeva-text);
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.arc-carousel__scent {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  margin-bottom: 8px;
+}
+
+.arc-carousel__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--aeva-muted);
+  text-decoration: none !important;
+  transition: color 200ms ease;
+  margin-top: 4px;
+}
+
+.arc-carousel__cta::after {
+  content: '→';
+  transition: transform 200ms ease;
+}
+
+.arc-carousel__cta:hover {
+  color: var(--aeva-accent);
+  text-decoration: none !important;
+}
+
+.arc-carousel__cta:hover::after {
+  transform: translateX(3px);
+}
+
+/* ─── Navigation arrows ─── */
+.arc-carousel__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--aeva-border);
+  background: color-mix(in srgb, var(--aeva-surface) 85%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--aeva-text);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 200ms ease, border-color 200ms ease, transform 200ms ease;
+}
+
+.arc-carousel__nav:hover {
+  background: var(--aeva-surface);
+  border-color: var(--aeva-muted);
+  transform: translateY(-50%) scale(1.06);
+}
+
+.arc-carousel__nav--prev {
+  left: clamp(12px, 3vw, 40px);
+}
+
+.arc-carousel__nav--next {
+  right: clamp(12px, 3vw, 40px);
+}
+
+/* ─── Dot indicators ─── */
+.arc-carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: clamp(16px, 3vh, 28px);
+  padding: 0 var(--gutter);
+}
+
+.arc-carousel__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: var(--aeva-border);
+  cursor: pointer;
+  transition: background 300ms ease, transform 300ms ease;
+  padding: 0;
+}
+
+.arc-carousel__dot.is-active {
+  background: var(--aeva-accent);
+  transform: scale(1.3);
+}
+
+.arc-carousel__dot:hover {
+  background: var(--aeva-muted);
+}
+
+/* ─── Scent strip below carousel ─── */
+.arc-carousel__scent-strip {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: clamp(20px, 3vh, 32px);
+  padding: 0 var(--gutter);
+}
+
+.arc-carousel__scent-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--aeva-text);
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid transparent;
+  transition: border-color 200ms ease, background 200ms ease;
+}
+
+.arc-carousel__scent-chip:hover,
+.arc-carousel__scent-chip.is-active {
+  border-color: var(--aeva-border);
+  background: var(--aeva-surface);
+}
+
+.arc-carousel__scent-pip {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ─── CTA row ─── */
+.arc-carousel__footer {
+  text-align: center;
+  margin-top: clamp(20px, 3vh, 32px);
+  padding: 0 var(--gutter);
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 768px) {
+  .arc-carousel__stage {
+    height: clamp(360px, 50vh, 480px);
+    perspective: 900px;
+  }
+
+  .arc-carousel__item {
+    width: clamp(180px, 45vw, 240px);
+  }
+
+  .arc-carousel__nav {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .arc-carousel__stage {
+    height: clamp(320px, 48vh, 420px);
+    perspective: 700px;
+  }
+
+  .arc-carousel__item {
+    width: clamp(160px, 50vw, 220px);
+  }
+}
+
+/* ─── Reduced motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  .arc-carousel__item {
+    transition: transform 0.01ms !important;
+  }
+}

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aeva Essentials — Clean, without compromise</title>
+    <meta name="description" content="Six scent-true home cleaners in clear PET. Bottles, pouches, room sets, and starters." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/tokens.css?v=chrome-9" />
+    <script src="assets/theme.js?v=spec-1"></script>
+    <link rel="stylesheet" href="styles/base.css?v=sticky-1" />
+    <link rel="stylesheet" href="styles/radius.css?v=squircle-2" />
+    <link rel="stylesheet" href="styles/components.css?v=chrome-1" />
+    <link rel="stylesheet" href="styles/pages.css?v=spec-1" />
+    <link rel="stylesheet" href="styles/production.css?v=width-1" />
+    <link rel="stylesheet" href="styles/spec.css?v=chrome-15" />
+    <link rel="stylesheet" href="styles/branch.css?v=home-r" />
+    <link rel="stylesheet" id="aeva-paper-chrome" href="styles/paper-chrome.css?v=paper-22" />
+    <link rel="stylesheet" id="aeva-presence" href="styles/presence.css?v=lift-2" />
+    <link rel="stylesheet" id="aeva-aesop-nav" href="styles/aesop-nav.css?v=4" />
+    <!-- Cinematic scroll experience -->
+    <link rel="stylesheet" href="styles/cinematic.css?v=cin-1" />
+    <link rel="stylesheet" href="styles/arc-carousel.css?v=arc-1" />
+  </head>
+  <body data-aeva-chrome="home" data-cin-home>
+    <div id="site-header-mount"></div>
+    <main id="main">
+
+      <!-- ═══════════════════════════════════════════════════════
+           CHAPTER 01 — THE ENTRANCE
+           ═══════════════════════════════════════════════════════ -->
+      <section class="cin-chapter cin-hero" data-chapter="1" data-home-hero>
+        <div class="cin-hero__video-wrap">
+          <video autoplay muted loop playsinline preload="auto" poster="assets/home/hero-video-poster.jpg">
+            <source src="assets/home/hero-stage.mp4" type="video/mp4" />
+          </video>
+          <div class="cin-hero__scrim"></div>
+        </div>
+        <div class="cin-hero__content">
+          <p class="cin-hero__kicker">The range</p>
+          <h1 class="cin-hero__title">Clean, without compromise</h1>
+          <p class="cin-hero__lede">Six thoughtful formulas for the rituals that make a home feel like yours.</p>
+          <div class="cin-hero__actions">
+            <a class="cin-btn cin-btn--primary" href="shop.html" data-magnetic>Shop the range</a>
+            <a class="cin-btn cin-btn--ghost" href="about.html" data-magnetic>Our story</a>
+          </div>
+        </div>
+        <div class="cin-hero__scroll-cue">
+          <span>Scroll to explore</span>
+          <div class="cin-hero__scroll-line"></div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════
+           CHAPTER 02 — THE RANGE (Arc Carousel)
+           ═══════════════════════════════════════════════════════ -->
+      <section class="cin-chapter" data-chapter="2" data-arc-carousel>
+        <div class="arc-carousel">
+          <div class="arc-carousel__header">
+            <p class="arc-carousel__kicker">Six essentials</p>
+            <h2>Each scent has a colour you can see</h2>
+            <p>Daily bottles in clear PET. Colour is the fragrance, not a job dye.</p>
+          </div>
+
+          <div class="arc-carousel__stage" data-arc-stage>
+            <button type="button" class="arc-carousel__nav arc-carousel__nav--prev" data-arc-prev aria-label="Previous product">‹</button>
+            <div class="arc-carousel__track" data-arc-track>
+              <!-- Items populated by arc-carousel.js from catalog data -->
+            </div>
+            <button type="button" class="arc-carousel__nav arc-carousel__nav--next" data-arc-next aria-label="Next product">›</button>
+          </div>
+
+          <div class="arc-carousel__dots" data-arc-dots></div>
+
+          <div class="arc-carousel__scent-strip" data-arc-scents></div>
+
+          <div class="arc-carousel__footer">
+            <a class="cin-btn cin-btn--ghost-dark" href="shop.html#shop-essentials" data-magnetic>Shop the essentials</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════
+           CHAPTER 03 — THE RITUAL (Browse by Room)
+           ═══════════════════════════════════════════════════════ -->
+      <section class="cin-chapter cin-ritual" data-chapter="3">
+        <div class="cin-ritual__pin">
+          <div class="cin-ritual__media cin-ritual__media--left">
+            <img src="assets/home/ritual-kitchen.jpg" alt="Kitchen cleaners by the sink" loading="lazy" />
+            <div class="cin-ritual__media-scrim"></div>
+            <div class="cin-ritual__label">
+              <h3>Kitchen</h3>
+              <a href="kitchen.html">Shop kitchen <span aria-hidden="true"></span></a>
+            </div>
+          </div>
+          <div class="cin-ritual__media cin-ritual__media--right">
+            <img src="assets/home/ritual-bathroom.jpg" alt="Bathroom cleaners by tiles" loading="lazy" />
+            <div class="cin-ritual__media-scrim"></div>
+            <div class="cin-ritual__label">
+              <h3>Bathroom</h3>
+              <a href="bathroom.html">Shop bathroom <span aria-hidden="true"></span></a>
+            </div>
+          </div>
+          <div class="cin-ritual__center-copy">
+            <p class="cin-eyebrow" style="color:rgba(244,239,228,0.7)">Explore by room</p>
+            <h2>A ritual for every surface</h2>
+          </div>
+          <nav class="cin-ritual__rooms-nav" aria-label="Browse by room">
+            <a href="kitchen.html">Kitchen</a>
+            <a href="bathroom.html">Bathroom</a>
+            <a href="surfaces.html">Surfaces</a>
+            <a href="kits.html">Starter Kits</a>
+            <a href="refills.html">Restock</a>
+            <a href="shop.html">Shop all</a>
+          </nav>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════
+           CHAPTER 04 — THE DETAIL (Product Close-Up)
+           ═══════════════════════════════════════════════════════ -->
+      <div class="cin-transition cin-transition--down"></div>
+      <section class="cin-chapter cin-detail" data-chapter="4">
+        <div class="cin-detail__pin">
+          <div class="cin-detail__bg">
+            <img src="assets/home/material-detail.jpg" alt="" aria-hidden="true" loading="lazy" />
+          </div>
+          <div class="cin-detail__product">
+            <img
+              src="assets/products/designs/clear-pet/dishwash-bottle.jpg"
+              alt="Aeva Essentials Dishwash Liquid — 500 ml clear PET bottle"
+              loading="lazy"
+            />
+          </div>
+          <div class="cin-detail__info">
+            <p class="cin-eyebrow">The formula</p>
+            <h2>Dishwash Liquid</h2>
+            <p class="cin-detail__scent-line" style="color:var(--scent-dishwash)">Lemon / Orange / Ginger</p>
+            <p class="cin-detail__desc">Plant friendly, natural dishwash liquid that cuts through grease and food residue, leaving dishes and glassware sparkling clean.</p>
+            <div class="cin-detail__promises">
+              <span class="cin-detail__promise">Plant-Based</span>
+              <span class="cin-detail__promise">Effective</span>
+              <span class="cin-detail__promise">Refillable</span>
+            </div>
+            <p style="margin-top:24px">
+              <a class="cin-btn cin-btn--dark" href="product.html?id=dishwash" data-magnetic>See product</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════
+           CHAPTER 05 — THE SYSTEM (Refill Story)
+           ═══════════════════════════════════════════════════════ -->
+      <div class="cin-transition cin-transition--dark"></div>
+      <section class="cin-chapter cin-system" data-chapter="5">
+        <div class="cin-system__pin">
+          <div class="cin-system__inner">
+            <div class="cin-system__media">
+              <div class="cin-system__bottle">
+                <img
+                  src="assets/products/designs/clear-pet/dishwash-bottle.jpg"
+                  alt="Aeva Essentials bottle"
+                  loading="lazy"
+                />
+              </div>
+              <div class="cin-system__arrow">→</div>
+              <div class="cin-system__pouch">
+                <img
+                  src="assets/products/designs/clear-pet/dishwash-pouch.jpg"
+                  alt="Aeva Essentials restock pouch"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <div class="cin-system__copy">
+              <p class="cin-eyebrow" style="color:var(--aeva-accent)">How it works</p>
+              <h2>Keep the bottle.<br>Pour the pouch.</h2>
+              <div class="cin-system__steps">
+                <div class="cin-system__step">
+                  <span class="cin-system__step-num">01</span>
+                  <div>
+                    <h3>Keep the bottle</h3>
+                    <p>Clear PET, built to stay out on the counter.</p>
+                  </div>
+                </div>
+                <div class="cin-system__step">
+                  <span class="cin-system__step-num">02</span>
+                  <div>
+                    <h3>Pour the pouch</h3>
+                    <p>One 1 L pouch fills a 1 L bottle once, or a 500 ml bottle twice.</p>
+                  </div>
+                </div>
+                <div class="cin-system__step">
+                  <span class="cin-system__step-num">03</span>
+                  <div>
+                    <h3>Begin again</h3>
+                    <p>A familiar ritual, ready for another round.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="cin-system__cta-row">
+                <a class="cin-btn cin-btn--ghost-light" href="refills.html" data-magnetic>Shop restock</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="cin-transition cin-transition--dark-out"></div>
+
+      <!-- ═══════════════════════════════════════════════════════
+           CHAPTER 06 — THE COLLECTION
+           ═══════════════════════════════════════════════════════ -->
+      <section class="cin-chapter cin-collection" data-chapter="6">
+
+        <!-- Feature: Kitchen Kit -->
+        <div class="cin-collection__section">
+          <div class="cin-feature">
+            <div class="cin-feature__media">
+              <img src="assets/home/ritual-nature-kitchen.jpg" alt="Kitchen Kit on the counter" loading="lazy" />
+            </div>
+            <div class="cin-feature__copy">
+              <p class="cin-eyebrow">The kit</p>
+              <h2>Kitchen, in one box</h2>
+              <p>Everything the kitchen asks for — dishwash, degreaser, cloth and scrub — in one considered set.</p>
+              <a class="cin-btn cin-btn--dark" href="kitchen.html" data-magnetic>Shop kitchen</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product tabs — existing structure preserved for home.js -->
+        <div class="cin-collection__section">
+          <div class="cin-tabs-head">
+            <p class="cin-eyebrow">The range</p>
+            <h2>Cleaning for the whole home</h2>
+          </div>
+          <div class="bb-tabs" role="tablist" aria-label="Shop paths">
+            <button type="button" role="tab" id="tab-bestsellers" aria-controls="home-bestsellers" aria-selected="true" data-bb-tab="bestsellers" data-shop-href="shop.html">Bestsellers</button>
+            <button type="button" role="tab" id="tab-starters" aria-controls="home-starters" aria-selected="false" data-bb-tab="starters" data-shop-href="kits.html">Starters</button>
+            <button type="button" role="tab" id="tab-rooms" aria-controls="home-rooms" aria-selected="false" data-bb-tab="rooms" data-shop-href="kits.html">Starter Kits</button>
+          </div>
+          <div class="bb-panel" role="tabpanel" id="home-bestsellers" data-bb-panel="bestsellers" aria-labelledby="tab-bestsellers"></div>
+          <div class="bb-panel" role="tabpanel" id="home-starters" data-bb-panel="starters" aria-labelledby="tab-starters" hidden></div>
+          <div class="bb-panel" role="tabpanel" id="home-rooms" data-bb-panel="rooms" aria-labelledby="tab-rooms" hidden></div>
+          <p class="bb-shop-all" style="text-align:center;margin-top:24px"><a href="shop.html" data-home-shop-all>Shop all</a></p>
+        </div>
+
+        <!-- System explorer — existing structure preserved for home.js -->
+        <div class="cin-collection__section">
+          <div class="cin-tabs-head">
+            <p class="cin-eyebrow">The system</p>
+            <h2>All you need for a clean home</h2>
+          </div>
+          <div class="system-stage" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center">
+            <div class="system-stage__copy">
+              <article class="system-card" data-system-card></article>
+            </div>
+            <div class="system-stage__media" data-system-media style="position:relative">
+              <img src="assets/home/system-still.jpg" alt="Six Aeva formulas with dish brush and cloths on marble" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Reviews — existing structure preserved for home.js -->
+        <div class="cin-collection__section cin-reviews">
+          <section aria-labelledby="reviews-title" id="home-reviews-section" hidden>
+            <div class="reviews-head" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px">
+              <h2 id="reviews-title">What people are saying</h2>
+              <div class="reviews-pager">
+                <button type="button" class="reviews-pager__btn" data-reviews-prev aria-label="Previous review">‹</button>
+                <button type="button" class="reviews-pager__btn" data-reviews-next aria-label="Next review">›</button>
+              </div>
+            </div>
+            <div class="reviews-viewport">
+              <div class="reviews-track" data-reviews-track></div>
+            </div>
+            <div class="reviews-dots" data-reviews-dots></div>
+          </section>
+        </div>
+
+        <!-- Proof points -->
+        <div class="cin-collection__section">
+          <div class="cin-proof">
+            <div class="cin-proof__item">
+              <h3>Delivered with care</h3>
+              <p>Across India, in 3–5 working days.</p>
+            </div>
+            <div class="cin-proof__item">
+              <h3>A 30-day welcome</h3>
+              <p>If it is not right for your home, let us know.</p>
+            </div>
+            <div class="cin-proof__item">
+              <h3>Six essentials</h3>
+              <p>A complete cupboard, thoughtfully edited.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature: Restock -->
+        <div class="cin-collection__section">
+          <div class="cin-feature" style="direction:rtl">
+            <div class="cin-feature__media" style="direction:ltr">
+              <img src="assets/home/nature-still-life.jpg" alt="Restock pouches beside a bottle" loading="lazy" />
+            </div>
+            <div class="cin-feature__copy" style="direction:ltr">
+              <p class="cin-eyebrow">How it works</p>
+              <h2>Keep the bottle. Pour the pouch.</h2>
+              <p>The formula you know, in a lighter way to keep it close.</p>
+              <a class="cin-btn cin-btn--dark" href="refills.html" data-magnetic>Shop restock</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ingredients -->
+        <div class="cin-collection__section" style="text-align:center">
+          <p class="cin-eyebrow">Ingredients</p>
+          <h2 style="font-family:var(--font-serif);font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:400;color:var(--aeva-text);margin-bottom:12px">Chemistry, considered</h2>
+          <p style="color:var(--aeva-muted);max-width:42ch;margin:0 auto 24px;line-height:1.6">Considered ingredient standards for everyday surfaces, with every formula fully listed on its product page.</p>
+          <a class="cin-btn cin-btn--ghost-dark" href="ingredients.html" data-magnetic>See ingredients</a>
+        </div>
+
+        <!-- Recommended reading -->
+        <div class="cin-collection__section">
+          <h2 style="font-family:var(--font-serif);font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:400;color:var(--aeva-text);margin-bottom:28px">Recommended reading</h2>
+          <div class="home-reading__grid">
+            <a class="home-reading__tile" href="about.html">
+              <img src="assets/home/nature-leaves.jpg" alt="" loading="lazy" />
+              <h3>A well-kept home</h3>
+              <p>Our story</p>
+            </a>
+            <a class="home-reading__tile" href="ingredients.html">
+              <img src="assets/home/material-detail.jpg" alt="" loading="lazy" />
+              <h3>Chemistry, considered</h3>
+              <p>Ingredients</p>
+            </a>
+            <a class="home-reading__tile" href="care.html">
+              <img src="assets/home/nature-still-life.jpg" alt="" loading="lazy" />
+              <h3>How to use the range</h3>
+              <p>Care</p>
+            </a>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════
+           CHAPTER 07 — THE CLOSE
+           ═══════════════════════════════════════════════════════ -->
+      <section class="cin-chapter cin-close" data-chapter="7">
+        <div class="cin-close__pin">
+          <div class="cin-particles"></div>
+          <div class="cin-close__product" data-parallax="0.06">
+            <img
+              src="assets/home/hero-stage.jpg?v=pack-1"
+              alt="The complete Aeva Essentials range"
+              loading="lazy"
+            />
+          </div>
+          <div class="cin-close__copy">
+            <p class="cin-eyebrow">Aeva Essentials</p>
+            <h2>Clean, without compromise</h2>
+            <p>Six thoughtful formulas. One considered home.</p>
+            <a class="cin-btn cin-btn--dark" href="shop.html" data-magnetic>Shop the range</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hidden elements for home.js compatibility -->
+      <div hidden aria-hidden="true">
+        <div id="home-six"></div>
+      </div>
+
+    </main>
+    <div id="site-footer-mount"></div>
+    <div id="cart-mount"></div>
+
+    <!-- Existing scripts (preserved) -->
+    <script src="data/catalog.js?v=atelier-1"></script>
+    <script src="assets/cart.js?v=ia-1"></script>
+    <script src="assets/cards.js?v=atelier-1"></script>
+    <script src="assets/partials.js?v=ia-13"></script>
+    <script src="assets/search.js?v=spec-3"></script>
+    <script src="assets/app.js?v=atelier-1"></script>
+    <script src="assets/home.js?v=ia-4"></script>
+
+    <!-- Cinematic scroll libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+
+    <!-- Arc carousel -->
+    <script src="assets/arc-carousel.js?v=arc-1"></script>
+
+    <!-- Cinematic experience -->
+    <script src="assets/cinematic.js?v=cin-1"></script>
+  </body>
+</html>

@@ -1,0 +1,356 @@
+/* Ingredients — skincare-grade trust page for home care */
+
+.ing-page {
+  background: var(--color-ivory);
+}
+
+.ing-hero {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: clamp(48px, 8vw, 88px) var(--gutter) 40px;
+  text-align: center;
+}
+.ing-hero h1 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  color: var(--color-charcoal) !important;
+  margin: 10px 0 18px;
+  letter-spacing: -0.02em;
+}
+.ing-hero__lede {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--color-stone);
+}
+
+.ing-promises {
+  border-top: 1px solid var(--color-clay);
+  border-bottom: 1px solid var(--color-clay);
+  background: var(--color-warm-white);
+}
+.ing-promises__grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 36px var(--gutter);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+@media (min-width: 720px) {
+  .ing-promises__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1100px) {
+  .ing-promises__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+}
+.ing-promises__grid strong {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  color: var(--color-charcoal);
+}
+.ing-promises__grid span {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-stone);
+}
+
+.ing-editorial {
+  margin: 0;
+  max-height: 360px;
+  overflow: hidden;
+}
+.ing-editorial img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+}
+
+.ing-section {
+  padding: clamp(56px, 8vw, 96px) var(--gutter);
+}
+.ing-section--plaster {
+  background: var(--color-plaster);
+}
+.ing-section--warm {
+  background: var(--color-warm-white);
+  border-top: 1px solid var(--color-clay);
+  border-bottom: 1px solid var(--color-clay);
+}
+.ing-section h2 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(1.65rem, 2.8vw, 2.15rem);
+  color: var(--color-charcoal) !important;
+  margin: 8px 0 28px;
+  text-align: center;
+}
+.ing-section .eyebrow {
+  text-align: center;
+}
+.ing-narrow {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+.ing-narrow h2,
+.ing-narrow .eyebrow {
+  text-align: left;
+}
+.ing-intro {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--color-stone);
+  margin: -12px 0 28px;
+}
+.ing-intro--center {
+  text-align: center;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ing-duo {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 800px) {
+  .ing-duo {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+}
+.ing-duo__card {
+  padding: clamp(24px, 3vw, 36px);
+  border: 1px solid var(--color-clay);
+  background: var(--color-warm-white);
+}
+.ing-duo__card h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1.35rem;
+  margin: 0 0 20px;
+  color: var(--color-charcoal) !important;
+}
+.ing-duo__card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.ing-duo__card li {
+  margin-bottom: 18px;
+}
+.ing-duo__card li:last-child {
+  margin-bottom: 0;
+}
+.ing-duo__card li strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--color-charcoal);
+}
+.ing-duo__card li span {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-stone);
+}
+.ing-duo__card--out {
+  background: var(--color-ivory);
+}
+
+.ing-roles {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: role;
+}
+.ing-roles li {
+  counter-increment: role;
+  position: relative;
+  padding: 18px 0 18px 48px;
+  border-top: 1px solid var(--color-clay);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--color-ink);
+}
+.ing-roles li:last-child {
+  border-bottom: 1px solid var(--color-clay);
+}
+.ing-roles li::before {
+  content: counter(role, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 18px;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--color-stone);
+  font-weight: 500;
+}
+.ing-roles li strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--color-charcoal);
+}
+
+.ing-glossary details {
+  border-top: 1px solid var(--color-clay);
+}
+.ing-glossary details:last-of-type {
+  border-bottom: 1px solid var(--color-clay);
+}
+.ing-glossary summary {
+  cursor: pointer;
+  padding: 14px 0;
+  font-weight: 500;
+  font-size: 14px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-charcoal);
+}
+.ing-glossary summary::-webkit-details-marker {
+  display: none;
+}
+.ing-glossary summary::after {
+  content: "+";
+  font-weight: 400;
+  color: var(--color-stone);
+}
+.ing-glossary details[open] summary::after {
+  content: "−";
+}
+.ing-glossary details p {
+  margin: 0 0 16px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--color-stone);
+}
+.ing-disclaimer {
+  margin-top: 24px;
+  font-size: 12px;
+  color: var(--color-stone);
+  line-height: 1.5;
+}
+
+.ing-products {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 800px) {
+  .ing-products {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+}
+.ing-product-card {
+  background: var(--color-ivory);
+  border: 1px solid var(--color-clay);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.ing-product-card__media {
+  aspect-ratio: 1;
+  background: var(--gradient-media);
+}
+.ing-product-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 12%;
+  box-sizing: border-box;
+}
+.ing-product-card__body {
+  padding: 20px 18px 22px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.ing-product-card h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1.15rem;
+  margin: 0 0 6px;
+  color: var(--color-charcoal) !important;
+}
+.ing-product-card__job {
+  font-size: 13px;
+  color: var(--color-stone);
+  margin: 0 0 14px;
+}
+.ing-product-card ul {
+  margin: 0 0 16px;
+  padding-left: 16px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--color-ink);
+  flex: 1;
+}
+.ing-product-card a {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-charcoal);
+  text-underline-offset: 3px;
+}
+
+.ing-honesty {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.ing-honesty li {
+  padding: 16px 0;
+  border-top: 1px solid var(--color-clay);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--color-ink);
+}
+.ing-honesty li:last-child {
+  border-bottom: 1px solid var(--color-clay);
+}
+
+.ing-cta {
+  text-align: center;
+  padding: clamp(56px, 8vw, 88px) var(--gutter);
+  background: var(--color-charcoal);
+  color: #fff;
+}
+.ing-cta h2 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(1.65rem, 3vw, 2.15rem);
+  margin: 0 0 12px;
+  color: #fff !important;
+}
+.ing-cta p {
+  margin: 0 0 28px;
+  opacity: 0.8;
+}
+.ing-cta .btn--primary {
+  background: #fff;
+  color: var(--color-charcoal) !important;
+  border-color: #fff;
+}
+.ing-cta .btn--secondary {
+  border-color: rgba(255, 255, 255, 0.55);
+  color: #fff !important;
+}
+.ing-cta .btn--ghost {
+  color: #fff !important;
+}

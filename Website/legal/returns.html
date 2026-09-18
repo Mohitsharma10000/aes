@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Returns — Aeva Essentials</title>
+  <meta name="description" content="Returns — Aeva Essentials mock policy." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles/tokens.css?v=chrome-9" />
+    <script src="../assets/theme.js?v=spec-1"></script>
+    <link rel="stylesheet" href="../styles/theme-herb-air.css?v=olive-1" />
+    <link rel="stylesheet" href="../styles/theme-olive-amber.css?v=olive-2" />
+  <link rel="stylesheet" href="../styles/base.css" />
+    <link rel="stylesheet" href="../styles/radius.css?v=round-2" />
+  <link rel="stylesheet" href="../styles/components.css?v=chrome-1" />
+    <link rel="stylesheet" href="../styles/production.css?v=width-1" />
+  <link rel="stylesheet" href="../styles/pages.css" />
+    <link rel="stylesheet" href="../styles/spec.css?v=chrome-14" />
+    <link rel="stylesheet" href="../styles/branch.css?v=home-f" />
+    <link rel="stylesheet" href="../styles/paper-chrome.css?v=paper-22" />
+  </head>
+<body data-aeva-chrome="">
+  <div id="site-header-mount"></div>
+  <main class="container legal-prose">
+    <nav class="breadcrumb"><a href="../home.html">Home</a> / Returns</nav>
+    <h1>Returns</h1>
+    <p class="disclaimer">Illustrative mock policy for design prototype — not legal advice.</p>
+    
+  <h2>Opened liquids</h2>
+  <p><strong>Opened liquids cannot be returned.</strong> Hygiene and safety require this for all cleaning formulas.</p>
+  <h2>Sealed products</h2>
+  <p>Unused, sealed products may be returned within 14 days of delivery in original packaging (mock policy).</p>
+  <h2>How to start a return</h2>
+  <p>Write to hello@aevaessentials.com with your order reference. This is an illustrative process only.</p>
+
+  </main>
+  <div id="site-footer-mount"></div>
+  <div id="cart-mount"></div>
+  <script src="../data/catalog.js"></script>
+  <script src="../assets/cart.js?v=ia-1"></script>
+<script src="../assets/partials.js?v=ia-13"></script>
+  <script src="../assets/search.js?v=spec-3"></script>
+  <script src="../assets/app.js"></script>
+  <script>
+    // Rewrite chrome links for nested path
+    document.querySelectorAll('a[href^="shop.html"], a[href^="home.html"], a[href^="kit.html"], a[href^="about.html"], a[href^="care.html"], a[href^="ingredients.html"], a[href^="product.html"], a[href^="checkout"]').forEach(a=>{
+      const h=a.getAttribute('href');
+      if(h && !h.startsWith('../') && !h.startsWith('http') && !h.startsWith('legal')) a.setAttribute('href','../'+h);
+    });
+    document.querySelectorAll('a[href^="legal/"]').forEach(a=>{
+      a.setAttribute('href', a.getAttribute('href').replace('legal/',''));
+    });
+  </script>
+</body>
+</html>

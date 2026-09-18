@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Checkout — Aeva Essentials</title>
+    <meta name="description" content="Illustrative checkout mock — not live commerce." />
+    <meta name="robots" content="noindex" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/tokens.css?v=chrome-9" />
+    <script src="assets/theme.js?v=spec-1"></script>
+    <link rel="stylesheet" href="styles/theme-herb-air.css?v=olive-1" />
+    <link rel="stylesheet" href="styles/theme-olive-amber.css?v=olive-2" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/radius.css?v=round-2" />
+    <link rel="stylesheet" href="styles/components.css?v=chrome-1" />
+    <link rel="stylesheet" href="styles/production.css?v=width-1" />
+    <link rel="stylesheet" href="styles/pages.css" />
+      <link rel="stylesheet" href="styles/spec.css?v=chrome-14" />
+    <link rel="stylesheet" href="styles/branch.css?v=home-f" />
+    <link rel="stylesheet" href="styles/paper-chrome.css?v=paper-22" />
+  </head>
+  <body data-aeva-chrome="">
+    <div id="site-header-mount"></div>
+
+    <main class="checkout-wrap">
+      <div>
+        <nav class="breadcrumb"><a href="shop.html">Shop</a> / Checkout</nav>
+        <h1 style="margin-bottom: 8px">Checkout</h1>
+        <p class="muted" style="margin-bottom: 16px">Illustrative flow only — do not enter real payment details.</p>
+        <ul class="page-trust" style="margin-bottom: 24px">
+          <li>Secure mock only</li>
+          <li>Free ship over ₹1,499</li>
+          <li>PET bottles packed with care</li>
+        </ul>
+
+        <div class="checkout-pii" role="note">
+          <strong>Demo only.</strong> Do not enter real PII or card numbers. Nothing is charged or stored on a server.
+        </div>
+
+        <form id="checkout-form" class="checkout-form">
+          <div class="checkout-card">
+            <h2>Contact</h2>
+            <div class="checkout-field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required placeholder="you@example.com" autocomplete="off" />
+            </div>
+            <div class="checkout-field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" placeholder="+91" autocomplete="off" />
+            </div>
+          </div>
+
+          <div class="checkout-card">
+            <h2>Shipping address</h2>
+            <div class="checkout-field">
+              <label for="name">Full name</label>
+              <input id="name" name="name" required autocomplete="off" />
+            </div>
+            <div class="checkout-field">
+              <label for="line1">Address</label>
+              <input id="line1" name="line1" required autocomplete="off" />
+            </div>
+            <div class="checkout-field">
+              <label for="city">City</label>
+              <input id="city" name="city" required autocomplete="off" />
+            </div>
+            <div class="checkout-field">
+              <label for="pincode">PIN code</label>
+              <input id="pincode" name="pincode" required pattern="[0-9]{6}" autocomplete="off" />
+            </div>
+            <div class="checkout-field">
+              <label for="state">State</label>
+              <input id="state" name="state" required autocomplete="off" />
+            </div>
+          </div>
+
+          <div class="checkout-card">
+            <h2>Shipping method</h2>
+            <label class="ship-option">
+              <input type="radio" name="shipping" value="standard" data-ship-cost="79" checked />
+              <span><strong>Standard</strong><br /><span class="muted">3–6 business days · ₹79</span></span>
+            </label>
+            <label class="ship-option">
+              <input type="radio" name="shipping" value="express" data-ship-cost="149" />
+              <span><strong>Express</strong><br /><span class="muted">1–3 business days · ₹149</span></span>
+            </label>
+            <label class="ship-option" id="ship-free-option">
+              <input type="radio" name="shipping" value="free" data-ship-cost="0" />
+              <span><strong>Free standard</strong><br /><span class="muted">Orders ₹1,499+ · 3–6 business days</span></span>
+            </label>
+          </div>
+
+          <div class="checkout-card">
+            <h2>Payment</h2>
+            <label class="pay-option">
+              <input type="radio" name="payment" value="upi" checked />
+              <span>UPI (mock)</span>
+            </label>
+            <label class="pay-option">
+              <input type="radio" name="payment" value="card" />
+              <span>Card (mock)</span>
+            </label>
+            <label class="pay-option">
+              <input type="radio" name="payment" value="netbanking" />
+              <span>Net banking (mock)</span>
+            </label>
+            <p class="muted" style="font-size:12px;margin-top:12px">COD is not available in this mock (or launch v1).</p>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--full">Place order (mock)</button>
+        </form>
+      </div>
+
+      <aside>
+        <div class="checkout-card" id="checkout-summary">
+          <h2>Order summary</h2>
+          <div data-checkout-lines></div>
+          <div class="checkout-summary-line"><span>Subtotal</span><span data-checkout-subtotal>—</span></div>
+          <div class="checkout-summary-line checkout-savings" data-checkout-savings-row hidden>
+            <span>You save</span><span data-checkout-savings>—</span>
+          </div>
+          <div class="checkout-summary-line"><span>Shipping</span><span data-checkout-shipping>—</span></div>
+          <div class="checkout-summary-line total"><span>Total</span><span data-checkout-total>—</span></div>
+          <p class="disclaimer" style="margin-top:16px">Prices tax-inclusive (illustrative). Free shipping over ₹1,499.</p>
+        </div>
+      </aside>
+    </main>
+
+    <div id="site-footer-mount"></div>
+    <div id="cart-mount"></div>
+
+    <script src="data/catalog.js?v=ia-6"></script>
+    <script src="assets/cart.js?v=ia-1"></script>
+    <script src="assets/partials.js?v=ia-13"></script>
+    <script src="assets/search.js?v=spec-3"></script>
+    <script src="assets/app.js"></script>
+    <script src="assets/checkout.js?v=cart-1"></script>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+/**
+ * Olive amber — olive green + amber + brown on beige/cream
+ * Active when <html data-theme="olive-amber">
+ * Olive = structure (eyebrows, tabs); amber = warmth (badges, savings); brown = type/CTAs
+ */
+
+html[data-theme="olive-amber"] .eyebrow,
+html[data-theme="olive-amber"] .apdp-kicker,
+html[data-theme="olive-amber"] .apdp-partners__eyebrow,
+html[data-theme="olive-amber"] .prod-hero__eyebrow,
+html[data-theme="olive-amber"] .set-card__eyebrow {
+  color: var(--color-sage);
+}
+
+html[data-theme="olive-amber"] .badge-off {
+  color: var(--color-amber);
+  border-color: color-mix(in srgb, var(--color-amber) 40%, var(--color-clay));
+  background: color-mix(in srgb, var(--color-amber-soft) 22%, var(--color-warm-white));
+}
+
+html[data-theme="olive-amber"] .utility-bar {
+  background: color-mix(in srgb, var(--color-sage) 35%, var(--color-charcoal));
+}
+
+html[data-theme="olive-amber"] .site-footer {
+  background: color-mix(in srgb, var(--color-sage) 12%, var(--color-plaster));
+}
+
+html[data-theme="olive-amber"] .nav-main a:hover,
+html[data-theme="olive-amber"] .header-meta a:hover,
+html[data-theme="olive-amber"] .curated__more:hover,
+html[data-theme="olive-amber"] .apdp-set-link:hover,
+html[data-theme="olive-amber"] a.breadcrumb:hover {
+  color: var(--color-amber);
+}
+
+html[data-theme="olive-amber"] .apdp-tab.is-active {
+  border-bottom-color: var(--color-amber);
+  color: var(--color-charcoal);
+}
+
+html[data-theme="olive-amber"] .apdp-checks li::before {
+  color: var(--color-sage);
+}
+
+html[data-theme="olive-amber"] .cart-set-progress__fill {
+  background: linear-gradient(
+    90deg,
+    var(--color-sage) 0%,
+    var(--color-amber) 100%
+  );
+}
+
+html[data-theme="olive-amber"] .cart-savings {
+  color: var(--color-amber);
+}
+
+html[data-theme="olive-amber"] .price-sale {
+  color: var(--color-ink);
+}
+
+/* Dark set band: sale price must stay white (overrides global .price-sale above) */
+html[data-theme="olive-amber"] .prod-kit-band .price-sale,
+html[data-theme="olive-amber"] .prod-kit-band__price .price-sale {
+  color: #ffffff !important;
+}
+html[data-theme="olive-amber"] .prod-kit-band .price-compare,
+html[data-theme="olive-amber"] .prod-kit-band__compare {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+html[data-theme="olive-amber"] .prod-kit-band__price {
+  color: #ffffff !important;
+}
+
+html[data-theme="olive-amber"] .prod-section--warm {
+  background: var(--color-sage-mist);
+}
+
+html[data-theme="olive-amber"] .filter-chip.is-active,
+html[data-theme="olive-amber"] .filters [data-filter].is-active {
+  background: color-mix(in srgb, var(--color-sage) 12%, var(--color-warm-white));
+  border-color: color-mix(in srgb, var(--color-sage) 45%, var(--color-clay));
+  color: var(--color-charcoal);
+}
+
+/* Primary CTAs: deep brown (not pure black) */
+html[data-theme="olive-amber"] .btn--primary,
+html[data-theme="olive-amber"] .apdp-atc,
+html[data-theme="olive-amber"] .apdp-sticky__btn {
+  background: var(--color-charcoal);
+  border-color: var(--color-charcoal);
+}
+
+html[data-theme="olive-amber"] .btn--primary:hover,
+html[data-theme="olive-amber"] .apdp-atc:hover {
+  background: var(--color-ink);
+  border-color: var(--color-ink);
+}
+
+html[data-theme="olive-amber"] .btn--secondary {
+  border-color: color-mix(in srgb, var(--color-sage) 50%, var(--color-clay));
+  color: var(--color-charcoal);
+}
+
+html[data-theme="olive-amber"] .btn--secondary:hover {
+  border-color: var(--color-sage);
+  background: var(--color-sage-mist);
+}
+
+html[data-theme="olive-amber"] .apdp-partner-row__atc:hover,
+html[data-theme="olive-amber"] .apdp-partners__set-btn:hover {
+  background: var(--color-amber);
+  border-color: var(--color-amber);
+  color: #fff;
+}
+
+html[data-theme="olive-amber"] .apdp-size.is-active {
+  background: var(--color-charcoal);
+  border-color: var(--color-charcoal);
+}
+
+/* Soft olive band on dark kit strip media edge */
+html[data-theme="olive-amber"] .prod-kit-band {
+  background: color-mix(in srgb, var(--color-sage) 22%, var(--color-charcoal));
+}
+
+html[data-theme="olive-amber"] .logo__dot {
+  color: var(--color-amber);
+}

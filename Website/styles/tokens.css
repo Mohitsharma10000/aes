@@ -1,0 +1,95 @@
+/* Production tokens — docs/AEVA-WEBSITE-DESIGN.md
+ * Source of truth for the clickable spec. Old --color-* names alias these. */
+
+:root {
+  --aeva-bg: #e6e0ce;
+  --aeva-surface: #f3eee3;
+  --aeva-chrome: #e6e0ce;
+  --aeva-text: #28291e;
+  --aeva-muted: #5c6454;
+  --aeva-border: #c9c2a8;
+  --aeva-cta: #3a4636;
+  --aeva-cta-hover: #2a3326;
+  --aeva-cta-type: #f4efe4;
+  --aeva-accent: #5b7a4e;
+  --aeva-sale: #a33b32;
+  --aeva-error: #c42b2b;
+  --aeva-success: #4a5d4e;
+
+  /* Scent slots — PLACEHOLDER until pack photography. Not chrome. */
+  --scent-floor: #5b7a4e;
+  --scent-dishwash: #c4a35a;
+  --scent-surface: #6b5b8a;
+  --scent-bathroom: #3d8b7a;
+  --scent-toilet: #3d5a80;
+  --scent-degreaser: #c47a3d;
+
+  --font-serif: "Source Serif 4", "Iowan Old Style", Georgia, serif;
+  --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+
+  --max-width: 1520px;
+  --gutter: 40px;
+  --section-y: 96px;
+  --space: 8px;
+
+  --radius-xs: 8px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+  --radius-full: 999px;
+  --radius: 14px;
+  --radius-chip: 10px;
+  --radius-media: 16px;
+  --transition: 200ms ease;
+
+  --header-h: 108px;
+  --header-top-h: 64px;
+  --utility-h: 40px;
+  --chip-h: 32px;
+
+  --shadow-soft: none;
+  --shadow-card: none;
+  --shadow-drawer: 0 0 24px rgb(43 41 37 / 0.08);
+  --header-rule: 0 1px 0 var(--aeva-border);
+
+  --focus-ring-color: var(--aeva-accent);
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+
+  /* Aliases so older CSS still compiles */
+  --color-ivory: var(--aeva-bg);
+  --color-plaster: var(--aeva-bg);
+  --color-warm-white: var(--aeva-surface);
+  --color-charcoal: var(--aeva-text);
+  --color-ink: var(--aeva-text);
+  --color-stone: var(--aeva-muted);
+  --color-clay: var(--aeva-border);
+  --color-amber: var(--aeva-accent);
+  --color-amber-light: var(--aeva-accent);
+  --color-amber-soft: var(--aeva-border);
+  --color-sage: var(--aeva-muted);
+  --color-sage-soft: var(--aeva-bg);
+  --color-sage-mist: var(--aeva-bg);
+  --color-error: var(--aeva-error);
+  --color-success: var(--aeva-success);
+  --color-accent: var(--aeva-cta);
+  --color-accent-soft: var(--aeva-bg);
+  --color-accent-text: var(--aeva-muted);
+  --color-taupe: var(--aeva-muted);
+  --color-sand: var(--aeva-border);
+  --color-media-start: var(--aeva-bg);
+  --color-media-mid: var(--aeva-bg);
+  --color-media-end: var(--aeva-border);
+  --gradient-media: var(--aeva-bg);
+  --header-top-h: 0px;
+  --header-nav-h: 64px;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --gutter: 20px;
+    --section-y: 64px;
+  }
+}

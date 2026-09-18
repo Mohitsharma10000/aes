@@ -1,0 +1,309 @@
+/* White two-row header on every template. Announcement matches footer charcoal. */
+
+html body .announcement-bar {
+  background: var(--aeva-text) !important;
+  background-color: var(--aeva-text) !important;
+  color: var(--aeva-cta-type) !important;
+  border-bottom: none;
+}
+html body .announcement-bar p,
+html body .announcement-bar__msg,
+html body .announcement-bar__close {
+  color: var(--aeva-cta-type) !important;
+}
+
+html body .site-chrome {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0;
+  right: 0;
+  z-index: 80 !important;
+  overflow: visible !important;
+}
+html body .cart-backdrop {
+  z-index: 90 !important;
+}
+html body .cart-drawer {
+  z-index: 91 !important;
+  top: 0 !important;
+  height: 100% !important;
+}
+html body:has(.cart-drawer.is-open) .site-chrome {
+  pointer-events: none;
+}
+html body .site-header,
+html body[data-aeva-chrome="home"] .site-header {
+  position: relative !important;
+  top: auto !important;
+  z-index: 1;
+}
+.site-chrome-spacer {
+  height: calc(var(--utility-h) + var(--header-h));
+  pointer-events: none;
+}
+body:has(.announcement-bar[hidden]) .site-chrome-spacer {
+  height: var(--header-h);
+}
+html body .site-header,
+html body .site-header .site-header__inner,
+html body .site-header .site-header__top,
+html body .site-header .site-header__sub,
+html body[data-aeva-chrome="home"] .site-header,
+html body[data-aeva-chrome="home"] .site-header .site-header__inner {
+  background: var(--aeva-bg) !important;
+  background-color: var(--aeva-bg) !important;
+  background-image: none !important;
+  color: var(--aeva-text);
+  font-weight: 400;
+}
+html body .site-header__top {
+  display: block !important;
+  position: relative !important;
+  z-index: 48;
+}
+html body .site-header .site-header__inner--top {
+  display: grid !important;
+  grid-template-columns: 1fr auto 1fr !important;
+  width: 100%;
+  max-width: none;
+}
+html body .header-cart .cart-count,
+html body .header-cart .cart-count[hidden] {
+  display: inline !important;
+  position: static;
+  min-width: 0;
+  height: auto;
+  padding: 0;
+  border-radius: 0;
+  background: none !important;
+  color: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit;
+  font-weight: 400;
+}
+
+html body .nav-mega,
+html body .nav-mega:hover,
+html body .site-header.is-shop-open .nav-mega,
+html body .nav-mega__grid,
+html body .nav-learn {
+  background: var(--aeva-bg) !important;
+  background-color: var(--aeva-bg) !important;
+  background-image: none !important;
+}
+
+html body .cart-drawer,
+html body .cart-drawer__header,
+html body .cart-drawer__body,
+html body .cart-drawer__footer,
+html body .nav-sheet__panel {
+  background: var(--aeva-bg) !important;
+  background-color: var(--aeva-bg) !important;
+}
+
+html body .header-search-results {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+html body .shop-hero,
+html body .shop-hero__media,
+html body .shop-hero__copy {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Catalog pages: cream chrome through title + filters, same as the page. */
+html body[data-aeva-chrome="shop"] .shop-mast,
+html body[data-aeva-chrome="starters"] .shop-mast,
+html body[data-aeva-chrome="sets"] .shop-mast,
+html body[data-aeva-chrome="refills"] .shop-mast,
+html body[data-aeva-chrome="restock"] .shop-mast,
+html body[data-aeva-chrome="shop"] .shop-toolbar,
+html body[data-aeva-chrome="starters"] .shop-toolbar,
+html body[data-aeva-chrome="sets"] .shop-toolbar,
+html body[data-aeva-chrome="refills"] .shop-toolbar,
+html body[data-aeva-chrome="restock"] .shop-toolbar {
+  background: var(--aeva-bg) !important;
+  background-color: var(--aeva-bg) !important;
+}
+
+/* Home: announcement stays charcoal; header sits on the hero like Aesop. */
+html body[data-aeva-chrome="home"] .site-chrome-spacer {
+  height: var(--utility-h) !important;
+}
+html body[data-aeva-chrome="home"]:has(.announcement-bar[hidden]) .site-chrome-spacer {
+  height: 0 !important;
+}
+html body[data-aeva-chrome="home"] .site-header.is-overlay,
+html body[data-aeva-chrome="home"] .site-header.is-overlay .site-header__top,
+html body[data-aeva-chrome="home"] .site-header.is-overlay .site-header__inner,
+html body[data-aeva-chrome="home"] .site-header.is-overlay .site-header__inner--top,
+html body[data-aeva-chrome="home"] .site-header.is-overlay .site-header__sub {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  color: #fffefb !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+html body[data-aeva-chrome="home"] .site-header.is-overlay .logo,
+html body[data-aeva-chrome="home"] .site-header.is-overlay .logo__rest,
+html body[data-aeva-chrome="home"] .site-header.is-overlay a,
+html body[data-aeva-chrome="home"] .site-header.is-overlay .header-icon,
+html body[data-aeva-chrome="home"] .site-header.is-overlay .nav-toggle {
+  color: #fffefb !important;
+}
+html body[data-aeva-chrome="home"] .site-header.is-overlay .nav-cats__rule {
+  background: rgba(255, 254, 251, 0.35);
+}
+html body[data-aeva-chrome="home"] .site-header.is-overlay .header-cart .cart-count {
+  background: none !important;
+  color: inherit !important;
+}
+html body[data-aeva-chrome="home"] .site-header.is-overlay .nav-learn,
+html body[data-aeva-chrome="home"] .site-header.is-overlay .nav-mega {
+  color: var(--aeva-text);
+}
+html body[data-aeva-chrome="home"] .site-header.is-overlay:hover,
+html body[data-aeva-chrome="home"] .site-header.is-overlay:hover .site-header__top,
+html body[data-aeva-chrome="home"] .site-header.is-overlay:hover .site-header__inner,
+html body[data-aeva-chrome="home"] .site-header.is-overlay:hover .site-header__inner--top,
+html body[data-aeva-chrome="home"] .site-header.is-overlay:hover .site-header__sub {
+  background: var(--aeva-bg) !important;
+  background-color: var(--aeva-bg) !important;
+  color: var(--aeva-text) !important;
+  border-color: var(--aeva-border) !important;
+}
+html body[data-aeva-chrome="home"] .site-header.is-overlay:hover .logo,
+html body[data-aeva-chrome="home"] .site-header.is-overlay:hover .logo__rest,
+html body[data-aeva-chrome="home"] .site-header.is-overlay:hover a,
+html body[data-aeva-chrome="home"] .site-header.is-overlay:hover .header-icon,
+html body[data-aeva-chrome="home"] .site-header.is-overlay:hover .nav-toggle {
+  color: var(--aeva-text) !important;
+}
+html body[data-aeva-chrome="home"] .site-header.is-overlay:hover .nav-cats__rule {
+  background: var(--aeva-border);
+}
+html body[data-aeva-chrome="home"] .site-header.is-overlay:hover .header-cart .cart-count {
+  background: none !important;
+  color: inherit !important;
+}
+
+/* Hide on scroll down. Compact Aesop bar on scroll up. */
+html body .site-chrome {
+  transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+}
+html body .site-chrome.is-hidden {
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+html body .site-chrome.is-compact .site-header {
+  display: grid !important;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  align-items: center;
+  column-gap: 20px;
+  min-height: 64px;
+  padding: 0 clamp(20px, 3vw, 40px);
+  background: var(--aeva-bg) !important;
+  color: var(--aeva-text) !important;
+  border-bottom: 1px solid var(--aeva-border);
+  box-shadow: 0 8px 24px rgb(40 41 30 / 0.06);
+}
+html body .site-chrome.is-compact .site-header__top,
+html body .site-chrome.is-compact .site-header__inner--top,
+html body .site-chrome.is-compact .site-header__sub {
+  display: contents !important;
+  background: transparent !important;
+  border: 0 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+html body .site-chrome.is-compact .nav-util {
+  display: none !important;
+}
+html body .site-chrome.is-compact .logo {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: start !important;
+  text-align: left !important;
+  font-size: 1.55rem !important;
+}
+html body .site-chrome.is-compact .nav-cats {
+  grid-column: 2;
+  grid-row: 1;
+  justify-content: center;
+  min-height: 64px;
+  gap: 0 22px;
+}
+html body .site-chrome.is-compact .nav-cats a {
+  padding: 20px 0;
+  border-bottom: 0 !important;
+}
+html body .site-chrome.is-compact .header-search-wrap {
+  grid-column: 3;
+  grid-row: 1;
+  width: 40px !important;
+  height: 40px;
+  justify-self: end;
+}
+html body .site-chrome.is-compact .header-search-bar {
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+}
+html body .site-chrome.is-compact .header-search-bar__input {
+  width: 0 !important;
+  min-width: 0;
+  padding: 0 !important;
+  opacity: 0;
+  pointer-events: none;
+}
+html body .site-chrome.is-compact .header-search-wrap:focus-within {
+  width: min(220px, 36vw) !important;
+}
+html body .site-chrome.is-compact .header-search-wrap:focus-within .header-search-bar {
+  width: 100%;
+  border: 1px solid var(--aeva-border) !important;
+  padding: 0 10px;
+  justify-content: flex-start;
+}
+html body .site-chrome.is-compact .header-search-wrap:focus-within .header-search-bar__input {
+  width: 100% !important;
+  opacity: 1;
+  pointer-events: auto;
+}
+html body .site-chrome.is-compact .header-actions {
+  grid-column: 4;
+  grid-row: 1;
+  justify-self: end;
+}
+html body .site-chrome.is-compact .nav-megas {
+  grid-column: 1 / -1;
+  grid-row: 2;
+}
+html body .site-chrome.is-compact .site-header,
+html body .site-chrome.is-compact .site-header .logo,
+html body .site-chrome.is-compact .site-header a,
+html body .site-chrome.is-compact .site-header .nav-toggle,
+html body .site-chrome.is-compact .site-header .header-cart {
+  color: var(--aeva-text) !important;
+}
+@media (max-width: 960px) {
+  html body .site-chrome.is-compact .nav-cats {
+    display: none !important;
+  }
+  html body .site-chrome.is-compact .site-header {
+    grid-template-columns: auto 1fr auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html body .site-chrome {
+    transition: none;
+  }
+}

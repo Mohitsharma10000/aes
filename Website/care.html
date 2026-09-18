@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Care — Aeva Essentials</title>
+    <meta name="description" content="Quiet care guides for dish, counters, and hands — Aeva kitchen essentials." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/tokens.css?v=chrome-9" />
+    <script src="assets/theme.js?v=spec-1"></script>
+    <link rel="stylesheet" href="styles/theme-herb-air.css?v=olive-1" />
+    <link rel="stylesheet" href="styles/theme-olive-amber.css?v=olive-2" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/radius.css?v=round-2" />
+    <link rel="stylesheet" href="styles/components.css?v=chrome-1" />
+    <link rel="stylesheet" href="styles/pages.css?v=kitchen-pdp-2" />
+    <link rel="stylesheet" href="styles/production.css?v=width-1" />
+    <link rel="stylesheet" href="styles/ingredients.css?v=1" />
+      <link rel="stylesheet" href="styles/spec.css?v=chrome-14" />
+    <link rel="stylesheet" href="styles/branch.css?v=home-f" />
+    <link rel="stylesheet" href="styles/paper-chrome.css?v=paper-22" />
+  </head>
+  <body data-aeva-chrome="care">
+    <div id="site-header-mount"></div>
+
+    <main class="ing-page">
+      <header class="ing-hero">
+        <p class="eyebrow">Care</p>
+        <h1>Notes for a working kitchen</h1>
+        <p class="ing-hero__lede">
+          Short practical guides — dish, counters, and hands. How to get the most from each formula.
+          No noise, no guilt.
+        </p>
+      </header>
+
+      <section class="ing-section" aria-labelledby="rituals-title">
+        <p class="eyebrow">Rituals</p>
+        <h2 id="rituals-title">Three daily jobs</h2>
+        <div class="ing-products care-rituals" id="care-rituals"></div>
+      </section>
+
+      <section class="ing-section ing-section--plaster" aria-labelledby="tips-title">
+        <div class="ing-narrow">
+          <p class="eyebrow">General</p>
+          <h2 id="tips-title">Quiet rules that always help</h2>
+          <ol class="ing-roles">
+            <li>
+              <strong>Less is usually enough</strong>
+              A little product goes further than foam volume suggests. Start small; add if needed.
+            </li>
+            <li>
+              <strong>Rinse and wipe dry</strong>
+              Especially on glass and steel — a second dry cloth keeps the finish clear.
+            </li>
+            <li>
+              <strong>Spot-test when unsure</strong>
+              Natural stone, unsealed wood, and specialty coatings deserve a small test first.
+            </li>
+            <li>
+              <strong>Store upright, away from heat</strong>
+              Keep bottles on the counter or shelf — calm, closed, out of direct flame.
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="ing-cta">
+        <h2>Prefer the full set?</h2>
+        <p>Kitchen essentials — three formulas, one considered start.</p>
+        <div class="btn-row" style="justify-content: center">
+          <a class="btn btn--primary" href="kit.html">Explore the set</a>
+          <a class="btn btn--secondary" href="shop.html">Shop all</a>
+          <a class="btn btn--ghost" href="faq.html">FAQ</a>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer-mount"></div>
+    <div id="cart-mount"></div>
+    <script src="data/catalog.js?v=ia-6"></script>
+    <script src="assets/cart.js?v=ia-1"></script>
+    <script src="assets/partials.js?v=ia-13"></script>
+    <script src="assets/search.js?v=spec-3"></script>
+    <script src="assets/app.js"></script>
+    <script>
+      (function () {
+        const A = window.AEVA;
+        if (!A) return;
+        const rituals = [
+          {
+            id: "dish-wash",
+            title: "Dish ritual",
+            body: "A little on the sponge. Wash, rinse thoroughly. Built for oil, masala, and everyday soil — without a harsh after-smell.",
+          },
+          {
+            id: "all-purpose-spray",
+            title: "Counter calm",
+            body: "Spray onto surface or cloth. Wipe clean. For heavier film, a brief dwell — nothing sticky left behind.",
+          },
+          {
+            id: "hand-soap",
+            title: "Hands that cook",
+            body: "Wet, lather, rinse. Mild enough for frequent washing after cooking and cleaning.",
+          },
+        ];
+        const root = document.getElementById("care-rituals");
+        if (!root) return;
+        root.innerHTML = rituals
+          .map((r) => {
+            const p = A.getProduct(r.id);
+            if (!p) return "";
+            return `
+            <article class="ing-product-card">
+              <div class="ing-product-card__media">
+                <img src="${A.productImage(p, null, "500")}" alt="${p.name}" loading="lazy" />
+              </div>
+              <div class="ing-product-card__body">
+                <h3>${r.title}</h3>
+                <p class="ing-product-card__job">${p.name}</p>
+                <p style="font-size:14px;line-height:1.55;color:var(--color-ink);margin:0 0 16px;flex:1">${r.body}</p>
+                <a href="product.html?id=${p.slug}">View ${p.name} →</a>
+              </div>
+            </article>`;
+          })
+          .join("");
+      })();
+    </script>
+  </body>
+</html>

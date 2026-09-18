@@ -1,0 +1,343 @@
+/* Aesop-like header: quiet type, always-on search, stay-open megas. */
+
+html body .site-header {
+  font-weight: 400;
+  overflow: visible !important;
+  position: relative;
+}
+html body .site-header .logo {
+  font-family: var(--font-serif);
+  font-size: 2.15rem !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.03em !important;
+  text-transform: none !important;
+  line-height: 1;
+}
+html body .nav-util {
+  gap: 22px;
+}
+html body .nav-util a,
+html body .nav-util button,
+html body .nav-cats a,
+html body .header-cart {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.01em !important;
+  text-transform: none !important;
+}
+html body .nav-item--shop > a::after,
+html body .nav-item--learn > a::after {
+  display: none !important;
+}
+
+html body .site-header.is-shop-open .site-header__sub,
+html body .site-header:has([data-shop-trigger]:hover) .site-header__sub,
+html body .site-header:has([data-shop-mega]:hover) .site-header__sub,
+html body .site-header.is-mega-open .site-header__sub {
+  visibility: visible !important;
+  display: flex !important;
+}
+
+html body .site-header__sub {
+  display: flex !important;
+  justify-content: center;
+  align-items: stretch;
+  gap: 28px;
+  min-height: 48px;
+  padding: 0 40px;
+  border-top: 0;
+  border-bottom: 1px solid transparent;
+  position: relative;
+  z-index: 2;
+}
+html body .site-header.is-mega-open .site-header__sub,
+html body .site-header:not(.is-overlay) .site-header__sub {
+  border-bottom-color: var(--aeva-border);
+}
+html body .site-header.is-overlay,
+html body .site-header.is-overlay .site-header__sub,
+html body .site-header.is-overlay .site-header__top {
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+html body .nav-cats {
+  gap: 0 26px;
+  min-height: 48px;
+  align-items: stretch;
+}
+html body .nav-cats a {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 0 12px;
+  border-bottom: 1px solid transparent;
+  margin-bottom: -1px;
+}
+html body .nav-cats a.is-active,
+html body .nav-cats a.is-mega-on,
+html body .nav-cats a:hover {
+  text-decoration: none !important;
+  border-bottom-color: currentColor;
+}
+html body .site-header.is-mega-open .nav-cats a.is-active {
+  border-bottom-color: transparent;
+}
+html body .site-header.is-mega-open .nav-cats a.is-mega-on {
+  border-bottom-color: currentColor;
+}
+html body .nav-cats a.nav-cats__quiet {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.01em !important;
+}
+html body .nav-cats__rule {
+  display: none;
+}
+
+html body .header-actions {
+  gap: 16px;
+}
+html body .header-cart {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  width: auto;
+  height: auto;
+  min-height: 40px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 14px !important;
+}
+html body .header-cart .cart-count,
+html body .header-cart .cart-count[hidden] {
+  display: inline !important;
+  position: static !important;
+  min-width: 0;
+  height: auto;
+  padding: 0;
+  border-radius: 0;
+  background: none !important;
+  color: inherit !important;
+  font-size: inherit !important;
+  font-weight: 400 !important;
+  line-height: inherit;
+}
+
+html body .site-header .header-search-wrap {
+  height: auto;
+  width: auto;
+  position: relative;
+  align-self: center;
+}
+html body .header-search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 148px;
+  min-height: 36px;
+  padding: 0 10px;
+  border: 1px solid currentColor;
+  border-radius: 0 !important;
+  background: transparent;
+  color: inherit;
+}
+html body .site-header.is-mega-open .header-search-box {
+  border-color: transparent;
+  border-bottom-color: currentColor;
+  width: 132px;
+  min-height: 32px;
+}
+html body .site-header .header-search-bar,
+html body .site-header .header-search-wrap.is-open .header-search-bar,
+html body .header-search-box .header-search-bar__input {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent !important;
+  color: inherit !important;
+  font-size: 14px !important;
+  font-weight: 400;
+  outline: none;
+}
+html body .header-search-box .header-search-bar__input::placeholder {
+  color: inherit;
+  opacity: 0.7;
+}
+html body .site-header .header-search-results {
+  top: calc(100% + 6px);
+  right: 0;
+  left: auto;
+  width: min(320px, 70vw);
+  z-index: 70;
+}
+
+.nav-megas {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: 55;
+  pointer-events: none;
+}
+html body .site-header.is-mega-open .nav-megas {
+  pointer-events: auto;
+}
+html body .site-header.is-mega-open .nav-megas::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -12px;
+  height: 12px;
+}
+
+html body .nav-mega,
+html body .nav-mega:hover,
+html body .site-header.is-shop-open .nav-mega,
+html body .nav-mega.is-open {
+  display: none;
+  position: relative;
+  left: auto;
+  right: auto;
+  top: auto;
+  margin: 0;
+  padding: 32px 0 40px;
+  background: var(--aeva-bg) !important;
+  background-color: var(--aeva-bg) !important;
+  border-bottom: 1px solid var(--aeva-border);
+  box-shadow: none;
+  color: var(--aeva-text);
+}
+html body .nav-mega[hidden] {
+  display: none !important;
+}
+html body .nav-mega:not([hidden]),
+html body .nav-mega.is-open:not([hidden]),
+html body .site-header.is-mega-open .nav-mega:not([hidden]) {
+  display: block !important;
+}
+html body .nav-mega::before {
+  content: none;
+}
+html body .nav-mega__grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(0, 1.2fr) minmax(0, 1.2fr);
+  gap: 28px 32px;
+  align-items: start;
+  background: transparent !important;
+}
+html body .nav-mega__label,
+html body .nav-mega h3 {
+  margin: 0 0 14px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--aeva-muted);
+}
+html body .nav-mega__col {
+  display: grid;
+  gap: 9px;
+  align-content: start;
+}
+html body .nav-mega a {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--aeva-text);
+  text-decoration: none;
+}
+html body .nav-mega a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+html body .nav-mega__card {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  text-decoration: none !important;
+}
+html body .nav-mega__card img,
+html body .nav-mega__card-ph {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #eee8dc;
+  border-radius: 0 !important;
+  corner-shape: square;
+}
+html body .nav-mega__card span {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--aeva-text);
+}
+
+/* Home overlay: cream fill when hovered, mega open, or search focused. */
+html body .site-header.is-mega-open,
+html body .site-header.is-mega-open .site-header__top,
+html body .site-header.is-mega-open .site-header__inner,
+html body .site-header.is-mega-open .site-header__inner--top,
+html body .site-header.is-mega-open .site-header__sub,
+html body[data-aeva-chrome="home"] .site-header.is-overlay:hover,
+html body[data-aeva-chrome="home"] .site-header.is-overlay:hover .site-header__top,
+html body[data-aeva-chrome="home"] .site-header.is-overlay:hover .site-header__inner,
+html body[data-aeva-chrome="home"] .site-header.is-overlay:hover .site-header__inner--top,
+html body[data-aeva-chrome="home"] .site-header.is-overlay:hover .site-header__sub,
+html body[data-aeva-chrome="home"] .site-header.is-overlay.is-mega-open,
+html body[data-aeva-chrome="home"] .site-header.is-overlay.is-mega-open .site-header__top,
+html body[data-aeva-chrome="home"] .site-header.is-overlay.is-mega-open .site-header__inner,
+html body[data-aeva-chrome="home"] .site-header.is-overlay.is-mega-open .site-header__inner--top,
+html body[data-aeva-chrome="home"] .site-header.is-overlay.is-mega-open .site-header__sub,
+html body[data-aeva-chrome="home"] .site-header.is-solid,
+html body[data-aeva-chrome="home"] .site-header.is-solid .site-header__top,
+html body[data-aeva-chrome="home"] .site-header.is-solid .site-header__inner,
+html body[data-aeva-chrome="home"] .site-header.is-solid .site-header__sub,
+html body[data-aeva-chrome="home"] .site-header.is-overlay:has(.header-search-wrap:focus-within),
+html body[data-aeva-chrome="home"] .site-header.is-overlay:has(.header-search-wrap:focus-within) .site-header__top,
+html body[data-aeva-chrome="home"] .site-header.is-overlay:has(.header-search-wrap:focus-within) .site-header__inner,
+html body[data-aeva-chrome="home"] .site-header.is-overlay:has(.header-search-wrap:focus-within) .site-header__sub {
+  background: var(--aeva-bg) !important;
+  background-color: var(--aeva-bg) !important;
+  color: var(--aeva-text) !important;
+  border-color: var(--aeva-border) !important;
+}
+html body[data-aeva-chrome="home"] .site-header.is-overlay:hover .logo,
+html body[data-aeva-chrome="home"] .site-header.is-overlay:hover a,
+html body[data-aeva-chrome="home"] .site-header.is-overlay:hover .header-cart,
+html body[data-aeva-chrome="home"] .site-header.is-overlay:hover .header-icon,
+html body[data-aeva-chrome="home"] .site-header.is-overlay:hover .nav-toggle,
+html body[data-aeva-chrome="home"] .site-header.is-overlay.is-mega-open .logo,
+html body[data-aeva-chrome="home"] .site-header.is-overlay.is-mega-open a,
+html body[data-aeva-chrome="home"] .site-header.is-overlay.is-mega-open .header-cart,
+html body[data-aeva-chrome="home"] .site-header.is-solid .logo,
+html body[data-aeva-chrome="home"] .site-header.is-solid a,
+html body[data-aeva-chrome="home"] .site-header.is-solid .header-cart,
+html body[data-aeva-chrome="home"] .site-header.is-overlay:has(.header-search-wrap:focus-within) .logo,
+html body[data-aeva-chrome="home"] .site-header.is-overlay:has(.header-search-wrap:focus-within) a,
+html body[data-aeva-chrome="home"] .site-header.is-overlay:has(.header-search-wrap:focus-within) .header-cart {
+  color: var(--aeva-text) !important;
+}
+
+@media (max-width: 960px) {
+  html body .site-header__sub,
+  html body .nav-megas,
+  html body .nav-mega {
+    display: none !important;
+  }
+  html body .header-cart {
+    display: none;
+  }
+}
